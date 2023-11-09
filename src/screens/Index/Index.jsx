@@ -22,7 +22,11 @@ export const Index = () => {
             <div className="view">
               <div className="overlap-group-2">
                 <div className="link-AP-wrapper">
-                  <div className="link-AP">만랩트레이더</div>
+                  <div className="link-AP">
+                    
+
+
+                  </div>
                 </div>
                 <div className="pseudo">
                   <div className="text-wrapper-4">NEW</div>
@@ -466,20 +470,22 @@ export const Index = () => {
               />
             </div>
             <p className="text-wrapper-44">
-              유한회사 에이투플러스 │ 대표자 : 황하 │ 서울특별시 서초구 논현로
-              123 │ TEL 1833-6014 │ sky_kospi@naver.com
+              만랩파트너스 │ 대표자 : 김기욱 │ 서울특별시 광진구 어디어디
+              │ TEL 1234-1234 │ 김기욱@naver.com
             </p>
             <p className="text-wrapper-45">
-              사업자등록번호 222-86-00230 │ 법인등록번호 206214-0014050 │
-              통신판매업 신고 : 제 2017-전남여수-0099호
+              사업자등록번호 123-45-67890 │ 법인등록번호123456-1234567 │
+              통신판매업 신고 : ~~~~~~~~~~~~~~~
             </p>
             <p className="text-wrapper-46">
-              개인정보관리책임자 : 전봉기 부장 sky_kospi@naver.com
+              개인정보관리책임자 : 김기욱 김기욱@naver.com
             </p>
             <p className="text-wrapper-47">ⓒ 미래투자. ALL RIGHTS RESERVED.</p>
           </footer>
           <div className="div-main-con-3">
-            <div className="text-wrapper-48">유튜브 따와줘요</div>
+            <div className="text-wrapper-48">
+              <p>유튜브 넣어줘</p>
+          </div>
           </div>
           <div className="rectangle" />
           <img
