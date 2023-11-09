@@ -1,0 +1,26 @@
+.group {
+  height: 37px;
+  width: 137px;
+}
+
+.group .overlap-group {
+  background-color: #ffffff;
+  height: 37px;
+  position: relative;
+  width: 124px;
+}
+
+.group .text-wrapper-3 {
+  color: #000000;
+  font-family: "Inter", Helvetica;
+  font-size: 19.5px;
+  font-weight: 600;
+  height: 33px;
+  left: 28px;
+  letter-spacing: -0.32px;
+  line-height: 33px;
+  position: absolute;
+  text-align: center;
+  top: 1px;
+  white-space: nowrap;
+}

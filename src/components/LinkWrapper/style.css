@@ -1,0 +1,21 @@
+.link-wrapper {
+  height: 24px;
+  position: relative;
+  width: 167px;
+}
+
+.link-wrapper .div {
+  color: #000000;
+  font-family: "Inter", Helvetica;
+  font-size: 19.7px;
+  font-weight: 600;
+  height: 24px;
+  left: 0;
+  letter-spacing: -1px;
+  line-height: 24px;
+  position: absolute;
+  text-align: center;
+  top: -1px;
+  white-space: nowrap;
+  width: 167px;
+}
