@@ -26,10 +26,10 @@ const Img = styled.img`
 `;
 
 const Divheader = styled.div`
-   margin: 0;
+   margin: 0 auto;
    display: flex;
    flex-direction: column;
-   padding: 0 20px;
+   padding: 0 0px;
 `;
 
 const DivImg = styled.div`
@@ -43,6 +43,7 @@ const Div2 = styled.div`
    justify-content: flex-end;
 
    margin-bottom: 10px;
+
    width: 100%;
    gap: 0px;
    border-bottom: 1px solid #ddd;
