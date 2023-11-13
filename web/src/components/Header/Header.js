@@ -23,6 +23,8 @@ const Img = styled.img`
    object-position: center;
    width: 45%;
    overflow: hidden;
+   margin-top: 10px; /* 원하는 여백을 추가합니다 */
+   margin-bottom: 10px; /* 원하는 여백을 추가합니다 */
 `;
 
 const Divheader = styled.div`
@@ -30,6 +32,7 @@ const Divheader = styled.div`
    display: flex;
    flex-direction: column;
    padding: 0 0px;
+   
 `;
 
 const DivImg = styled.div`
@@ -56,7 +59,7 @@ const Div3 = styled.div`
    white-space: nowrap;
    border-left: 1px solid #ddd;
    aspect-ratio: 1.5714285714285714;
-   padding: 12px 11px;
+   padding: 2px 11px;
    font: 400 12px/280% NanumGothic, sans-serif;
 `;
 
@@ -69,7 +72,7 @@ const Div4 = styled.div`
    border-right: 1px solid #ddd;
    border-left: 1px solid #ddd;
    aspect-ratio: 1.9428571428571428;
-   padding: 12px 11px;
+   padding: 1px 11px;
    font: 400 13px/278% NanumGothic, sans-serif;
 `;
 
