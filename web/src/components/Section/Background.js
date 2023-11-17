@@ -1,15 +1,20 @@
 import React from "react";
 import styled from "styled-components";
-import Bodybox from "./Bodybox";
-import Bodybox3 from "./Bodybox3";
+import Bodybox1 from "./Bodybox1";
 import Bodybox2 from "./Bodybox2";
+import Bodybox3 from "./Bodybox3";
 import { Box } from "@mui/material";
+
 function Bodycolorcomponent() {
   return (
     <Bodycolor>
-      <Box display="flex">
-        <Bodybox3></Bodybox3>
+      <Box 
+      display="flex"
+      flexDirection="column"
+      alignItems="center">
+      <Bodybox2></Bodybox2>
       </Box>
+      
       <Box
         display="flex"
         justifyContent="flex-end" // 추가된 부분
@@ -17,8 +22,8 @@ function Bodycolorcomponent() {
         flexDirection="row" // 변경된 부분
         flexWrap="wrap" // 변경된 부분
       >
-        <Bodybox />
-        <Bodybox2 />
+        <Bodybox1 />
+        <Bodybox3 />
       </Box>
     </Bodycolor>
   );

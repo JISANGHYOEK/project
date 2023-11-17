@@ -1,7 +1,7 @@
 import React from "react";
 import { Box } from "@mui/material";
 import styled from "styled-components";
-function Bodybox() {
+function Bodybox1() {
   return (
     <div>
       <Box
@@ -38,4 +38,4 @@ const Div2 = styled.div`
   font: 600 20px/123% Inter, sans-serif;
 `;
 
-export default Bodybox;
+export default Bodybox1;
