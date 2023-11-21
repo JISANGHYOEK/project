@@ -1,8 +1,7 @@
 .App {
     display: flex;
     flex-direction: column;
-    overflow-y: auto; /* 세로 스크롤이 내용이 넘칠 때 보이도록 설정 */
-    min-height: 150vh;
+    min-height: 150vh; /* 새로 스크롤 크기 조정 */
 }
 
 .Footer {
