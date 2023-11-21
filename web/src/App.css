@@ -1,7 +1,8 @@
 .App {
     display: flex;
     flex-direction: column;
-    min-height: 100vh; /* 페이지 높이보다 적은 내용을 갖더라도 페이지의 맨 아래에 FooterComponent가 위치하도록 설정 */
+    overflow-y: auto; /* 세로 스크롤이 내용이 넘칠 때 보이도록 설정 */
+    min-height: 150vh;
 }
 
 .Footer {

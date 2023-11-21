@@ -4,6 +4,7 @@ import Bodybox1 from "./Bodybox1";
 import Bodybox2 from "./Bodybox2";
 import Bodybox3 from "./Bodybox3";
 import Youtubebox from "../Youtube/Youtubebox"
+import Bodybox4 from "./Bodybox4";
 import { Box } from "@mui/material";
 
 function Bodycolorcomponent() {
@@ -29,8 +30,16 @@ function Bodycolorcomponent() {
         <Bodybox2 />
         <Bodybox3 />
       </Box>
+      <Box 
+      display="flex"
+      flexDirection="column"
+      alignItems="center"
+      >
+      <Bodybox4/>
+      </Box>
     </Bodycolor>
   );
+
 }
 
 const Bodycolor = styled.div`

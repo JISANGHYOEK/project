@@ -1,7 +1,7 @@
 import React from "react";
 import { Box } from "@mui/material";
 import styled from "styled-components";
-function Bodybox1() {
+function Bodybox2() {
   return (
     <div>
       <Box
@@ -13,7 +13,7 @@ function Bodybox1() {
         boxShadow="1px 1px 1px 0px rgba(0, 0, 0, 0.1), 0px 4px 4px 0px rgba(0, 0, 0, 0.25)"
         padding={0.5}
       >
-        <Div1>V.I.P 추천 종목</Div1>
+        <Div1>V.I.P 회원 상담</Div1>
       </Box>
       <Box
         width={230}
@@ -24,7 +24,7 @@ function Bodybox1() {
         boxShadow="1px 1px 1px 0px rgba(0, 0, 0, 0.1), 0px 4px 4px 0px rgba(0, 0, 0, 0.25)"
         padding={0.5}
       >
-        <Div2>V.I.P 매매 결산</Div2>
+        <Div2>카카오톡 바로가기</Div2>
       </Box>
     </div>
   );
@@ -38,4 +38,4 @@ const Div2 = styled.div`
   font: 600 20px/123% Inter, sans-serif;
 `;
 
-export default Bodybox1;
+export default Bodybox2;

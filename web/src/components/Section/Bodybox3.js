@@ -14,7 +14,7 @@ function Bodybox3() {
         boxShadow="1px 1px 1px 0px rgba(0, 0, 0, 0.1), 0px 4px 4px 0px rgba(0, 0, 0, 0.25)"
         padding={0.5}
       >
-        <Div1>V.I.P 회원 가격</Div1>
+        <Div1>무료 종목 상담</Div1>
       </Box>
 
       <Box

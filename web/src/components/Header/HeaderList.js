@@ -21,14 +21,12 @@ function HeaderComponent2(props) {
                <MenuItem>프로그램 매매 결산</MenuItem>
             </DropdownMenu>
          </NavItem>
-         {/* <NavItem>
+         <NavItem>
             무료 추천 종목
             <DropdownMenu>
-               <MenuItem>항목 1</MenuItem>
-               <MenuItem>항목 2</MenuItem>
-               <MenuItem>항목 3</MenuItem>
+               <MenuItem>2023 무료추천 종목</MenuItem>
             </DropdownMenu>
-         </NavItem> */}
+         </NavItem>
          <NavItem>
             무료 추천 종목 수익률
             <DropdownMenu>

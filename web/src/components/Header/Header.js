@@ -44,7 +44,6 @@ const DivImg = styled.div`
 const Div2 = styled.div`
    display: flex;
    justify-content: flex-end;
-
    margin-bottom: 10px;
 
    width: 100%;
