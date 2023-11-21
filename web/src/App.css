@@ -1,0 +1,9 @@
+.App {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* 페이지 높이보다 적은 내용을 갖더라도 페이지의 맨 아래에 FooterComponent가 위치하도록 설정 */
+}
+
+.Footer {
+    margin-top: auto; /* Footer를 항상 페이지 맨 아래에 위치시킵니다 */
+}

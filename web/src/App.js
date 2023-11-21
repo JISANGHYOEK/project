@@ -8,7 +8,9 @@ function App() {
     <div className="App">
       <HeaderComponent />
       <Sectioncomponent />
-      <FooterComponent />
+      <div className="Footer">
+        <FooterComponent />
+      </div>
     </div>
   );
 }

@@ -17,7 +17,7 @@ function HeaderComponent2(props) {
             만랩 트레이더
             <DropdownMenu>
                <MenuItem>무료 프로그램 신청</MenuItem>
-               <MenuItem>프로그램 가격</MenuItem>
+               <MenuItem>프로그램 가격 문의</MenuItem>
                <MenuItem>프로그램 매매 결산</MenuItem>
             </DropdownMenu>
          </NavItem>
