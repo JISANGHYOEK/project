@@ -43,9 +43,11 @@ function Bodycolorcomponent() {
 }
 
 const Bodycolor = styled.div`
+
   background-color: #f7f7f7;
-  height: 100vh;
+  height: auto;
   width: 100%;
+  padding-bottom: 20px; /* 원하는 크기의 아래쪽 패딩을 추가합니다. */
 `;
 
 export default Bodycolorcomponent;
