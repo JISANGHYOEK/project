@@ -1,12 +1,13 @@
 import * as React from 'react';
 import styled from 'styled-components';
 import HeaderComponent2 from './HeaderList';
+import { Link } from '@mui/material';
 
 function HeaderComponent(props) {
    return (
       <Divheader>
          <Div2>
-            <Div3>로그인</Div3>
+            <Div3><Link to = "../Login/login">로그인</Link></Div3>
             <Div4>회원가입</Div4>
          </Div2>
          <DivImg>
