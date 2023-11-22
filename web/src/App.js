@@ -1,18 +1,30 @@
 import "./App.css";
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import HeaderComponent from "./components/Header/Header";
 import Sectioncomponent from "./components/Section/Section";
 import FooterComponent from "./components/Footer/Footer";
+import LoginPage from "./components/LoginPage/LoginPage";
 
-
-function App() {
+function LandingPage() {
   return (
-      <div className="App">
-        <HeaderComponent />
-        <Sectioncomponent />
-        <div className="Footer">
+    <div className="App">
+      <HeaderComponent />
+      <Sectioncomponent />
+      <div className="Footer">
         <FooterComponent />
       </div>
     </div>
+  );
+}
+
+function App() {
+  return (
+    <Router>
+      <Routes>
+        <Route path="/" element={<LandingPage/>} />
+        <Route path="/login" element={<LoginPage/>} />
+      </Routes>
+    </Router>
   );
 }
 

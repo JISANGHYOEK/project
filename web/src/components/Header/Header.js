@@ -1,18 +1,21 @@
 import * as React from 'react';
 import styled from 'styled-components';
 import HeaderComponent2 from './HeaderList';
-import { Link } from '@mui/material';
+import { Link } from 'react-router-dom';
+
 
 function HeaderComponent(props) {
    return (
       <Divheader>
          <Div2>
-            <Div3><Link to = "../Login/login">로그인</Link></Div3>
+            <Div3><Link to = "./login">로그인</Link></Div3>
             <Div4>회원가입</Div4>
          </Div2>
-         <DivImg>
-            <Img loading="lazy" srcSet="mainimg.png" />
-         </DivImg>
+         <Link to="/"> {/* LandingPage 경로 지정 */}
+            <DivImg>
+               <Img loading="lazy" srcSet="mainimg.png" />
+            </DivImg>
+         </Link>
          <HeaderComponent2></HeaderComponent2>
       </Divheader>
    );
@@ -32,7 +35,7 @@ const Divheader = styled.div`
    margin: 0 auto;
    display: flex;
    flex-direction: column;
-   padding: 0 0px;
+   padding: 0 130px;
    
 `;
 

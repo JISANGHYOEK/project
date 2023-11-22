@@ -18,6 +18,7 @@ const FooterContainer = styled.div`
     background-color: #f0f0f0;
     padding: 20px 0;
     text-align: center;
+    margin-bottom: -20px; /* 여백 제거 */
     `;
 
     const FooterContent = styled.div`
