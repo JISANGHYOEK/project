@@ -6,18 +6,20 @@ import { Link } from 'react-router-dom';
 
 function HeaderComponent(props) {
    return (
-      <Divheader>
+      <>
          <Div2>
-            <Div3><Link to = "./login">로그인</Link></Div3>
-            <Div4>회원가입</Div4>
+            <Div3><Link to = "/login">로그인</Link></Div3>
+            <Div4><Link to = "/signup">회원가입</Link></Div4>
          </Div2>
-         <Link to="/"> {/* LandingPage 경로 지정 */}
-            <DivImg>
-               <Img loading="lazy" srcSet="mainimg.png" />
-            </DivImg>
-         </Link>
-         <HeaderComponent2></HeaderComponent2>
-      </Divheader>
+         <Divheader>
+            <Link to="/"> {/* LandingPage 경로 지정 */}
+               <DivImg>
+                  <Img loading="lazy" srcSet="mainimg.png" />
+               </DivImg>
+            </Link>
+            <HeaderComponent2></HeaderComponent2>
+         </Divheader>
+      </>
    );
 }
 
@@ -64,6 +66,13 @@ const Div3 = styled.div`
    aspect-ratio: 1.5714285714285714;
    padding: 2px 11px;
    font: 400 12px/280% NanumGothic, sans-serif;
+   a {
+      text-decoration: none; /* 밑줄 제거 */
+      color: inherit; /* 상위 요소에서 상속한 색상 사용 */
+      &:hover {
+         color: #f00; /* 호버 상태일 때 색상 변경 */
+      }
+   }
 `;
 
 const Div4 = styled.div`
@@ -77,6 +86,14 @@ const Div4 = styled.div`
    aspect-ratio: 1.9428571428571428;
    padding: 1px 11px;
    font: 400 13px/278% NanumGothic, sans-serif;
+   a {
+      text-decoration: none; /* 밑줄 제거 */
+      color: inherit; /* 상위 요소에서 상속한 색상 사용 */
+      &:hover {
+         color: #f00; /* 호버 상태일 때 색상 변경 */
+      }
+   }
+   
 `;
 
 export default HeaderComponent;
