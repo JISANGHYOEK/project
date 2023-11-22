@@ -1,13 +1,13 @@
 import React from "react";
 import { Box } from "@mui/material";
-import YouTube from 'react-youtube';
+import YouTube from "react-youtube";
 
 function Youtubebox() {
-  const videoId = 'ha3xPsbwoEA'; // YouTube 링크
+  const videoId = "ha3xPsbwoEA"; // YouTube 링크
 
   const opts = {
-    height: '450',
-    width: '100%',
+    height: "450",
+    width: "100%",
   };
 
   return (
