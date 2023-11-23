@@ -1,0 +1,101 @@
+.signup-form {
+    width: 350px; /* 폼의 너비 설정 */
+    padding: 50px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+
+}
+
+.signup-form label {
+    margin-bottom: 10px; /* 라벨 아래 여백 추가 */
+    display: block; /* 라벨을 한 줄에 하나씩 표시 */
+}
+
+.signup-form input {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 5px;
+    border: none;
+    border-bottom: 1px solid #ccc; /* 밑줄 스타일 추가 */
+    margin-top: 5px; /* 입력 필드 위에 여백 추가 */
+    
+}
+
+.signup-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* 수직 가운데 정렬 */
+    justify-content: center; /* 수평 가운데 정렬 */
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+
+.signup-page ul {
+    list-style: none; /* 기본 체크박스 점을 숨김 */
+    padding-left: 0; /* ul의 기본 패딩 제거 */
+    margin-top: 20px;
+}
+
+.signup-page .signup-label1 {
+    text-align: center; /* 텍스트 가운데 정렬 */
+    padding: 20px 103px; /* 여백 추가 (예시로 지정된 값) */
+    border: 2px solid blue; /* 테두리 스타일 및 색상 지정 */
+    color: white; /* 글자색을 흰색으로 변경 */
+    background-color: blue; /* 배경색을 파란색으로 변경 */
+    border-radius: 4px; /* 테두리 모서리 둥글게 설정 (선택사항) */
+    font-weight: bold; /* 글자를 굵게 설정 */    
+}
+
+.signup-page .signup-label2 {
+    text-align:center; /* 텍스트 가운데 정렬 */
+    padding: 0px 0px; /* 여백 추가 (예시로 지정된 값) */
+    font-weight: bold; /* 글자를 굵게 설정 */    
+}
+
+.signup-page .signup-label3 {
+    text-align:center; /* 텍스트 가운데 정렬 */
+    padding: 0px 0px; /* 여백 추가 (예시로 지정된 값) */
+    font-weight: bold; /* 글자를 굵게 설정 */    
+}
+
+.textarea-style {
+    font-family: 'Arial', sans-serif;
+    font-size: 14px;
+    width: 350px;
+    height: 120px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+
+    line-height: 1.5;
+    white-space: pre-wrap;
+    overflow-wrap: break-word;
+    margin-bottom: 30px;
+}
+
+.signup-page .signup-button1{
+    text-align: center; /* 텍스트 가운데 정렬 */
+    padding: 20px 103px; /* 여백 추가 (예시로 지정된 값) */
+    border: 2px solid blue; /* 테두리 스타일 및 색상 지정 */
+    color: white; /* 글자색을 흰색으로 변경 */
+    background-color: blue; /* 배경색을 파란색으로 변경 */
+    border-radius: 4px; /* 테두리 모서리 둥글게 설정 (선택사항) */
+    font-weight: bold; /* 글자를 굵게 설정 */
+    text-decoration: none; /* 밑줄 제거 */
+}
+.signup-page .signup-button2{
+    text-align: center; /* 텍스트 가운데 정렬 */
+    padding: 20px 103px; /* 여백 추가 (예시로 지정된 값) */
+    border: 2px solid blue; /* 테두리 스타일 및 색상 지정 */
+    color: blue; /* 글자색을 흰색으로 변경 */
+    background-color: white; /* 배경색을 파란색으로 변경 */
+    border-radius: 4px; /* 테두리 모서리 둥글게 설정 (선택사항) */
+    font-weight: bold; /* 글자를 굵게 설정 */
+    text-decoration: none; /* 밑줄 제거 */
+}
+
+  /* 회원가입 폼에 대한 스타일 */
+.signup-form-container {
+    
+    /* 필요한 스타일 */
+}

@@ -1,6 +1,10 @@
 import React, { useState } from 'react';
+import './SignupPage.css';
+import HeaderComponent from '../Header/Header';
+import FooterComponent from '../Footer/Footer';
+import { Link } from 'react-router-dom';
 
-const SignupPage2 = () => {
+const SignupPage = () => {
   // 입력 값 상태 관리
     const [userInfo, setUserInfo] = useState({
         username: '',
@@ -24,39 +28,48 @@ const SignupPage2 = () => {
     };
 
     return (
-        <form onSubmit={handleSubmit}>
-        <label>
-            아이디:
-            <input
-            type="text"
-            name="username"
-            value={userInfo.username}
-            onChange={handleInputChange}
-            />
-        </label>
-        <br />
-        <label>
-            이메일:
-            <input
-            type="email"
-            name="email"
-            value={userInfo.email}
-            onChange={handleInputChange}
-            />
-        </label>
-        <br />
-        <label>
-            비밀번호:
-            <input
-            type="password"
-            name="password"
-            value={userInfo.password}
-            onChange={handleInputChange}
-            />
-        </label>
-        <button type="submit">가입하기</button>
-        </form>
+        <div>
+            <HeaderComponent/>
+            <div className="signup-page">
+                <label className="signup-label1">만랩파트너스 회원가입</label><br/>
+                    <form className="signup-form" onSubmit={handleSubmit}>
+                        <label>
+                            아이디
+                            <input
+                            type="text"
+                            name="username"
+                            value={userInfo.username}
+                            onChange={handleInputChange}
+                            />
+                        </label><br/>
+                        <label>
+                            이메일
+                            <input
+                            type="email"
+                            name="email"
+                            value={userInfo.email}
+                            onChange={handleInputChange}
+                            />
+                        </label><br/>
+                        <label>
+                            비밀번호
+                            <input
+                            type="password"
+                            name="password"
+                            value={userInfo.password}
+                            onChange={handleInputChange}
+                            />
+                        </label>
+                    </form><br/>
+                    <div>
+                    <button className="signup-button1" type="submit">가입하기</button>
+                    <span style={{ margin: '0 5px' }}></span>
+                    <Link to ="/"><button className="signup-button2" type="submit">취소</button></Link>
+                    </div>
+            </div>
+            <FooterComponent/>
+        </div>
     );
 };
 
-export default SignupPage2;
+export default SignupPage;

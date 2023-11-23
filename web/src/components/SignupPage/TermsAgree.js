@@ -1,69 +1,41 @@
-import React, { useState } from "react";
+import React from "react";
 import HeaderComponent from "../Header/Header";
 import FooterComponent from '../Footer/Footer';
-import './TermsAgree.css';
+import './SignupPage.css';
+import { useNavigate } from 'react-router-dom';
+import Checkbox from './Checkbox';
 
-function SignupPage() {
-    const [allAgreed, setAllAgreed] = useState(false);
-    const [agreements, setAgreements] = useState({
-        termsAgreed: false,
-        personalInfoAgreed: false,
-        provisionAgreed: false,
-    });
+function TermsAgree() {
+    const navigate = useNavigate();
+    const [terms, setTerms] = React.useState(false);
+    const [personal, setPersonal] = React.useState(false);
 
-    const handleAgreementChange = (event) => {
-        const { name, checked } = event.target;
-
-        setAgreements((prevAgreements) => ({ ...prevAgreements, [name]: checked }));
-        const allChecked = Object.values({ ...agreements, [name]: checked }).every(
-        (value) => value === true
-        );
-        setAllAgreed(allChecked);
+    const handleNextButtonClick = () => {
+        if (!terms) {
+            alert('이용약관에 동의해주세요.');
+        }
+        else if(!personal) {
+            alert('개인정보 처리 방침에 동의해주세요.');
+        }
+        else{
+            navigate('/signupPage');
+        }
     };
 
-    const handleAllAgreementChange = (event) => {
-        const { checked } = event.target;
-        setAgreements((prevAgreements) =>
-        Object.keys(prevAgreements).reduce(
-            (newAgreements, agreementKey) => ({
-            ...newAgreements,
-            [agreementKey]: checked,
-            }),
-            {}
-        )
-    );
-        setAllAgreed(checked);
-};
+    const handleAllAgreementChange = (checked) => {
+        setTerms(checked);
+        setPersonal(checked);
+    };
 
 return (
     <div>
         <HeaderComponent />
         <div className="signup-page">
             <div>
-                <label className="signup-label1">만랩파트너스 회원가입</label>
-                <ul>
-                    <li>
-                        <br/>
-                        <input
-                            type="checkbox"
-                            id="agree_check_all"
-                            name="agree_check_all"
-                            checked={allAgreed}
-                            onChange={handleAllAgreementChange}
-                        />
-        
-                        <label htmlFor="agree_check_all">전체 동의하기</label>
-                    </li>
-                    <li>
-                        <input
-                            type="checkbox"
-                            id="agree_check_used"
-                            name="termsAgreed"
-                            required
-                            checked={agreements.termsAgreed}
-                            onChange={handleAgreementChange}
-                        />
-                        <label htmlFor="agree_check_used">[필수] 이용약관 동의</label><br/>
+                <label className="signup-label1">만랩파트너스 회원가입</label><br/><br/><br/>
+                <label className="signup-label2">회원가입약관 및 개인정보처리방침안내의 내용에<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;동의하셔야 회원가입 하실 수 있습니다.</label>
+                <br/><br/><Checkbox checked={terms} onChange={setTerms}>
+                    <label htmlFor="agree_check_used">[필수] 이용약관 동의</label><br/>
                         <textarea className="textarea-style" readOnly>{`제 1 장 총칙
 
 제 1 조 (목적)
@@ -192,19 +164,9 @@ return (
 
 <부칙>
 본 약관은 2023년 11월 23일부터 적용한다.`}</textarea>
-                    </li>
-                    <li>
-                        <input
-                            type="checkbox"
-                            id="agree_check_info"
-                            name="personalInfoAgreed"
-                            required
-                            checked={agreements.personalInfoAgreed}
-                            onChange={handleAgreementChange}
-                        />
-                        <label htmlFor="agree_check_info">
-                        [필수] 개인정보 처리 방침
-                        </label><br/>
+                </Checkbox>
+                <br/><br/><Checkbox checked={personal} onChange={setPersonal}>
+                        <label htmlFor="agree_check_info">[필수] 개인정보 처리 방침</label><br/>
                         <textarea className="textarea-style" readOnly>{`< 만랩파트너스 >은(는) 「개인정보 보호법」 제30조에 따라 정보주체의 개인정보를 보호하고 이와 관련한 고충을 신속하고 원활하게 처리할 수 있도록 하기 위하여 다음과 같이 개인정보 처리방침을 수립·공개합니다.
 
 ○ 이 개인정보처리방침은 2021년 1월 1부터 적용됩니다.
@@ -359,8 +321,13 @@ return (
 
 
 ① 이 개인정보처리방침은 2021년 1월 1부터 적용됩니다.`}</textarea>
-                    </li>
-                </ul>
+                </Checkbox>
+            </div>
+            <Checkbox checked={terms && personal} onChange={handleAllAgreementChange}>
+                        <label className="signup-label3" htmlFor="agree_check_all">전체 동의하기</label><br/><br/><br/>
+                    </Checkbox>
+            <div>
+                <button className="signup-button1" onClick={handleNextButtonClick} style={{ color: "white", textDecoration: "none" }}>다음</button>
             </div>
         </div>
         <FooterComponent/>
@@ -368,4 +335,4 @@ return (
 );
 }
 
-export default SignupPage;
+export default TermsAgree;

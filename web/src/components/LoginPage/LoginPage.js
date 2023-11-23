@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import HeaderComponent from "../Header/Header";
 import FooterComponent from '../Footer/Footer';
 
-const LoginPage = ({ history }) => {
+const LoginPage = () => {
     const [id, setId] = useState('');
     const [password, setPassword] = useState('');
 
@@ -29,9 +29,10 @@ const LoginPage = ({ history }) => {
     };
     
     return (
-        <StyledLoginPage>
+        <div>
             <div className="Header">
                 <HeaderComponent />
+                <StyledLoginPage>
                 <div className="login-page">
                     <LoginForm onSubmit={handleLogin}>
                         <div>
@@ -60,9 +61,10 @@ const LoginPage = ({ history }) => {
                         </div>
                     </LoginForm>
                 </div>
-                <FooterComponent />
+            </StyledLoginPage>
             </div>
-        </StyledLoginPage>
+            <FooterComponent/>
+        </div>
     );
 };
 
@@ -105,7 +107,7 @@ const StyledButton = styled.button`
     height: 50px; /* 원하는 높이로 조절하세요*/
     padding: 10px;
     font-size: 16px;
-    background-color: #FF8C00;
+    background-color: blue;
     color: white;
     border: none;
     cursor: pointer;
@@ -113,7 +115,7 @@ const StyledButton = styled.button`
     margin-botton: 10px;
 
     &:hover {
-        background-color: #FF8C00;
+        background-color: blue;
         text-decoration: underline;
     }
 `;
