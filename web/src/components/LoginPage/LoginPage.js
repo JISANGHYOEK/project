@@ -52,7 +52,7 @@ const LoginPage = () => {
                             />
                         </div>
                         <div>
-                            <StyledButton type="submit">로그인</StyledButton>
+                            <Link to ="/MainPage"><StyledButton type="submit">로그인</StyledButton></Link>
                         </div>
                         <div>
                             <StyledLink to="/forgot-password">비밀번호 찾기</StyledLink>
@@ -67,6 +67,7 @@ const LoginPage = () => {
         </div>
     );
 };
+
 
 const StyledLink = styled(Link)`
     color: #555; /* 링크 색상 */
