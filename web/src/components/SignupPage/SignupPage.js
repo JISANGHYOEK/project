@@ -27,6 +27,22 @@ const SignupPage = () => {
         e.preventDefault(); // 기본 제출 동작 방지
         // 여기에 폼 제출 로직을 추가하세요
         // 예: 서버에 데이터를 보내거나 다른 작업을 수행할 수 있습니다.
+        if (userInfo.username === '') {
+            alert('아이디를 입력해주세요.');
+            return;
+        }
+        else if (userInfo.email === '') {
+            alert('이메일을 입력해주세요.');
+            return;
+        }
+        else if (userInfo.password === '') {
+            alert('비밀번호를 입력해주세요.');
+            return;
+        }
+        else if (userInfo.tel === '') {
+            alert('전화번호를 입력해주세요.');
+            return;
+        }
         if (userInfo.password !== userInfo.confirmPassword) {
             alert('비밀번호가 일치하지 않습니다.');
             return;
