@@ -1,5 +1,5 @@
-const express = require('express')
-const app = express()
+const express = require('express');
+const app = express();
 const {MongoClient, ObjectId} = requre('mongodb');
 
 app.use(express.static(__dirname + '/public'))
@@ -39,7 +39,7 @@ app.post('/요청보낸URL', async (req,res) => {
         if(req.body.title == '') {
             res.send('제목이 없습니다.')
         } else {
-            awiat db.collection('post').insertOne({~~}) // 데이터~~ 는 object 형식으로 넣어야함 { ~~ }
+            await db.collection('post').insertOne({~~}) // 데이터~~ 는 object 형식으로 넣어야함 { ~~ }
             res.redirect('/처리후 이동할 URL')
         }
     } catch (e) {
@@ -77,19 +77,19 @@ app.get('/edit/ : id', async(req,res) => {
     }
 })
 
-app.post('/edit/', async(req,res) => {
+app.post('/edit/', async (req,res) => {
     try {
         let result = awiat db.collection('post').updateOne({ _id :  new ObjecteID(req.params.id)} , // new ObjecteID('') - db 에 존재하는 식별 번호
         {$set : { title : req.body.title, content : req.body.content }}) //$set : 덮어쓰기
             res.status(400).send('이상한 URL 입력함') // 400 - 원하는 에러 메세지
-        }
-        응답.redirect('/list')
+        
+        res.redirect('/list')
         
     } catch (e) {
         console.log(e)
         res.status(400).send('이상한 URL 입력함')
     }
-})
+  })
 
 //글 삭제 - ejs 파일 내 <body> 하단 부
 <script>
