@@ -31,6 +31,11 @@ const SignupPage = () => {
             alert('비밀번호가 일치하지 않습니다.');
             return;
         }
+        const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+        if (!emailPattern.test(userInfo.email)) {
+            alert('올바른 이메일 형식이 아닙니다.');
+            return;
+        }
     };
 
     return (
@@ -83,7 +88,7 @@ const SignupPage = () => {
                 <br/>
                 <form className="signup-form" onSubmit={handleSubmit}>
                 <div className="form-field">
-                        <label htmlFor="tel">전화번호</label>
+                        <label htmlFor="tel">휴대폰번호</label>
                         <input
                             type="tel"
                             id="tel"
@@ -92,6 +97,7 @@ const SignupPage = () => {
                             onChange={handleInputChange}
                         />
                     </div>
+                
                 <div className="form-field">
                         <button className="signup-button" type="submit">가입하기</button>
                         <span className="signup-separator">|</span>
