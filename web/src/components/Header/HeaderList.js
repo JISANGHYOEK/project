@@ -6,39 +6,18 @@ function HeaderComponent2(props) {
       <Navigation>
          <NavItem>
             V.I.P 매매
-            <DropdownMenu>
-               <MenuItem>vip 추천 종목</MenuItem>
-               <MenuItem>vip 매매 결산</MenuItem>
-               <MenuItem>vip 회원 가격</MenuItem>
-               <MenuItem>vip 특가 이벤트</MenuItem>
-            </DropdownMenu>
          </NavItem>
          <NavItem>
-            만랩 트레이더
-            <DropdownMenu>
-               <MenuItem>무료 프로그램 신청</MenuItem>
-               <MenuItem>프로그램 가격 문의</MenuItem>
-               <MenuItem>프로그램 매매 결산</MenuItem>
-            </DropdownMenu>
+            무료 프로그램 신청
          </NavItem>
          <NavItem>
             무료 추천 종목
-            <DropdownMenu>
-               <MenuItem>2023 무료추천 종목</MenuItem>
-            </DropdownMenu>
          </NavItem>
          <NavItem>
             무료 추천 종목 수익률
-            <DropdownMenu>
-               <MenuItem>2023매매 수익 결산</MenuItem>
-            </DropdownMenu>
          </NavItem>
          <NavItem>
             고객 센터
-            <DropdownMenu>
-               <MenuItem>공지사항</MenuItem>
-               <MenuItem>Q&A</MenuItem>
-            </DropdownMenu>
          </NavItem>
       </Navigation>
    );

@@ -6,6 +6,8 @@ import FooterComponent from "./components/Footer/Footer";
 import LoginPage from "./components/LoginPage/LoginPage";
 import TermsAgree from "./components/SignupPage/TermsAgree";
 import SignupPage from "./components/SignupPage/SignupPage";
+import MainPage from "./components/MainPage/MainPage";
+
 
 function LandingPage() {
   return (
@@ -27,6 +29,7 @@ function App() {
         <Route path="/login" element={<LoginPage/>} />
         <Route path="/TermsAgree" element={<TermsAgree/>} />
         <Route path="/SignupPage" element={<SignupPage/>} />
+        <Route path="/MainPage" element={<MainPage/>} />
       </Routes>
     </Router>
   );
