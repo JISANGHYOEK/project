@@ -57,7 +57,7 @@ const LoginPage = () => {
                         <div>
                             <StyledLink to="/forgot-password">비밀번호 찾기</StyledLink>
                             <StyledLink to="/forgot-username">아이디 찾기</StyledLink>  
-                            <StyledLink to="/signup">회원가입하기</StyledLink>
+                            <StyledLink to="/TermsAgree">회원가입하기</StyledLink>
                         </div>
                     </LoginForm>
                 </div>

@@ -1,14 +1,40 @@
 .signup-form {
-    width: 350px; /* 폼의 너비 설정 */
-    padding: 50px;
+    width: 300px;
+    padding: 20px;
     border: 1px solid #ccc;
     border-radius: 5px;
+}
 
+.form-field {
+    margin-bottom: 20px;
+}
+
+label {
+    margin-bottom: 5px;
+    font-weight: bold;
 }
 
 .signup-form label {
     margin-bottom: 10px; /* 라벨 아래 여백 추가 */
     display: block; /* 라벨을 한 줄에 하나씩 표시 */
+}
+
+.signup-button {
+    padding: 8px 20px;
+    background-color: blue;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.signup-separator {
+    margin: 0 10px;
+}
+
+.cancel-link {
+    text-decoration: none;
+    color: #777;
 }
 
 .signup-form input {
