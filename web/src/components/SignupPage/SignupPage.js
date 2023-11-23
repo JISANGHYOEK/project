@@ -11,6 +11,7 @@ const SignupPage = () => {
         email: '',
         password: '',
         confirmPassword: '',
+        tel: '',
     });
 
     // 입력 값 변경 핸들러
@@ -78,7 +79,20 @@ const SignupPage = () => {
                             onChange={handleInputChange}
                         />
                     </div>
-                    <div className="form-field">
+                </form>
+                <br/>
+                <form className="signup-form" onSubmit={handleSubmit}>
+                <div className="form-field">
+                        <label htmlFor="tel">전화번호</label>
+                        <input
+                            type="tel"
+                            id="tel"
+                            name="tel"
+                            value={userInfo.tel}
+                            onChange={handleInputChange}
+                        />
+                    </div>
+                <div className="form-field">
                         <button className="signup-button" type="submit">가입하기</button>
                         <span className="signup-separator">|</span>
                         <Link to="/" className="cancel-link">취소</Link>
