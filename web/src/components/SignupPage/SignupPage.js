@@ -1,13 +1,12 @@
 import React, { useState } from 'react';
 
-const SignupPage = () => {
+const SignupPage2 = () => {
   // 입력 값 상태 관리
     const [userInfo, setUserInfo] = useState({
         username: '',
         email: '',
         password: '',
     });
-    const [agreement, setAgreement] = useState(false);
 
     // 입력 값 변경 핸들러
     const handleInputChange = (e) => {
@@ -18,6 +17,11 @@ const SignupPage = () => {
         });
     };
 
+    const handleSubmit = (e) => {
+        e.preventDefault(); // 기본 제출 동작 방지
+        // 여기에 폼 제출 로직을 추가하세요
+        // 예: 서버에 데이터를 보내거나 다른 작업을 수행할 수 있습니다.
+    };
 
     return (
         <form onSubmit={handleSubmit}>
@@ -55,4 +59,4 @@ const SignupPage = () => {
     );
 };
 
-export default SignupPage;
+export default SignupPage2;

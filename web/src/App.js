@@ -4,7 +4,8 @@ import HeaderComponent from "./components/Header/Header";
 import Sectioncomponent from "./components/Section/Section";
 import FooterComponent from "./components/Footer/Footer";
 import LoginPage from "./components/LoginPage/LoginPage";
-import TermsOfUse from "./components/SignupPage/TermsOfUse";
+import SignupPage from "./components/SignupPage/TermsAgree";
+// import SignupPage2 from "./components/SignupPage/SignupPage";
 
 function LandingPage() {
   return (
@@ -24,7 +25,7 @@ function App() {
       <Routes>
         <Route path="/" element={<LandingPage/>} />
         <Route path="/login" element={<LoginPage/>} />
-        <Route path="/signup" element={<TermsOfUse/>} />
+        <Route path="/signup" element={<SignupPage/>} />
       </Routes>
     </Router>
   );
