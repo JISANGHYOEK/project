@@ -49,28 +49,6 @@ const NavItem = styled.div`
       }
    }
 `;
-const DropdownMenu = styled.div`
-   display: none;
-   position: absolute;
-   top: 100%;
-   left: 0;
-   background-color: #fff;
-   width: auto; // 수정된 코드
-   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-`;
 
-const MenuItem = styled.div`
-   padding: 5px 16px;
-   color: #212529;
-   width: auto; // 수정된 코드
-   text-align: center;
-   white-space: nowrap;
-   font-weight: normal;
-   font-size: 18px;
-   overflow: hidden;
-   &:hover {
-      background-color: #f8f9fa;
-   }
-`;
 
 export default HeaderComponent2;

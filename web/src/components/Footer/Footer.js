@@ -1,12 +1,14 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+import "./Footer.css"
 
 function FooterComponent() {
     return (
         <FooterContainer>
             <FooterContent>
-                <FooterItem>이용약관</FooterItem>
-                <FooterItem>개인정보 처리방침</FooterItem>
+            <Link to="/TermsPage" className="FooterItemLink"><FooterItem>이용약관</FooterItem></Link>
+            <Link to="/PersonalPage" className="FooterItemLink"><FooterItem>개인정보 처리방침</FooterItem></Link>
                 <FooterItem>문의하기</FooterItem>
             </FooterContent>
         <Copyright>&copy; 2023 만랩파트너스</Copyright>
