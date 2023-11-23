@@ -84,7 +84,7 @@ const StyledLink = styled(Link)`
 const StyledLoginPage = styled.div`
     .login-page {
         margin-top: 120px; /* 로그인 폼과 헤더 간 여백 설정 */
-        margin-bottom: 150px;
+        margin-bottom: 350px;
     }
 `;
 
