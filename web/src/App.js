@@ -11,7 +11,7 @@ import TermsPage from "./components/Footer/TermsPage";
 import PersonalPage from "./components/Footer/PersonalPage";
 import CscPage from "./components/Csc/CscPage";
 import MainCscPage from "./components/Csc/MainCscPage";
-import AskPage from "./components/Ask/CscPage";
+import AskPage from "./components/Ask/AskPage";
 
 function LandingPage() {
   return (
