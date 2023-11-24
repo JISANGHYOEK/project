@@ -1,16 +1,49 @@
+.csc-container {
+    margin-top: 100px;
+    margin-bottom: 100px;
+    text-align: center; /* 내용을 가운데 정렬하기 위한 설정 */
+    max-width: 800px;
+    margin-left: 550px;
+}
+
+
 .csc-title {
     font-size: 36px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* faq-list 스타일 */
+.faq-list {
+    border-top: 1px solid #ccc;
+    padding-top: 20px;
+}
+
+/* faq-item 스타일 */
+.faq-item {
+    cursor: pointer;
     margin-bottom: 10px;
-    /* 원하는 스타일 추가 */
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
 }
 
-.csc-description {
+.faq-item:hover {
+    background-color: #f5f5f5;
+}
+
+/* question 스타일 */
+.question {
+    font-weight: bold;
     font-size: 18px;
-    color: #555;
-    /* 원하는 스타일 추가 */
+    margin-bottom: 5px;
 }
 
-.csc-contact {
-    margin-top: 30px;
-    /* 원하는 스타일 추가 */
+/* answer 스타일 */
+.answer {
+    margin-top: 10px;
+    font-size: 16px;
+    line-height: 1.6;
 }

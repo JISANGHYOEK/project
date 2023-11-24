@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
-import HeaderComponent from '../Header/Header';
+import MainHeaderComponent from '../Header/MainHeader';
 import FooterComponent from '../Footer/Footer';
 import './CscPage.css'; // CSS 파일 경로에 맞게 수정
 
-const CscPage = () => {
+const MainCscPage = () => {
     // 하드코딩된 자주 묻는 질문 데이터
+
     const faqData = [
         {
         question: `무료 추천 프로그램은 어떻게 운영되나요?`,
@@ -74,7 +75,7 @@ const CscPage = () => {
 
     return (
         <div>
-            <HeaderComponent />
+            <MainHeaderComponent />
 
             <div className="csc-container">
                 <h1 className="csc-title">자주 묻는 질문</h1>
@@ -99,4 +100,4 @@ const CscPage = () => {
     );
 }
 
-export default CscPage;
+export default MainCscPage;

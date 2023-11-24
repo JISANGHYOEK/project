@@ -13,7 +13,7 @@ function HeaderComponent2(props) {
          <NavItem>
             무료 추천 종목 수익률
          </NavItem>
-         <StyledLink to="/CscPage">
+         <StyledLink to="/MainCscPage">
          <NavItem>
             고객 센터
          </NavItem>
