@@ -5,7 +5,7 @@ function HeaderComponent2(props) {
    return (
       <Navigation>
          <NavItem>
-            V.I.P 매매
+            V.I.P 회원
          </NavItem>
          <NavItem>
             무료 추천 종목

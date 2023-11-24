@@ -17,7 +17,7 @@ function Bodybox3() {
         <Div1>무료 종목 바로가기</Div1>
       </Box>
 
-      <Box
+      <StyledBox
         width={230}
         height={223}
         bgcolor="white"
@@ -26,8 +26,10 @@ function Bodybox3() {
         boxShadow="1px 1px 1px 0px rgba(0, 0, 0, 0.1), 0px 4px 4px 0px rgba(0, 0, 0, 0.25)"
         padding={0.5}
       >
-        <Div2>프로그램 문의</Div2>
-      </Box>
+        <StyledLink href="./AskPage" target="_blank" rel="noopener noreferrer">
+          문의하기
+        </StyledLink>
+      </StyledBox>
     </div>
   );
 }
@@ -35,7 +37,14 @@ function Bodybox3() {
 const Div1 = styled.div`
   font: 600 20px/123% Inter, sans-serif;
 `;
-const Div2 = styled.div`
+const StyledBox = styled(Box)`
+  /* Your additional styles */
+`;
+
+
+const StyledLink = styled.a`
   font: 600 20px/123% Inter, sans-serif;
+  text-decoration: none;
+  color: inherit;
 `;
 export default Bodybox3;
