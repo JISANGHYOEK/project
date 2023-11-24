@@ -9,7 +9,7 @@ function MainHeaderComponent(props) {
       <>
          <Div2>
             <Div3><Link to = "/">로그아웃</Link></Div3>
-            <Div4><Link to = "/TermsAgree">정보수정</Link></Div4>
+            <Div4><Link to = "#">정보수정</Link></Div4>
          </Div2>
          <Divheader>
             <Link to="/"> {/* LandingPage 경로 지정 */}
