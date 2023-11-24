@@ -1,0 +1,16 @@
+.csc-title {
+    font-size: 36px;
+    margin-bottom: 10px;
+    /* 원하는 스타일 추가 */
+}
+
+.csc-description {
+    font-size: 18px;
+    color: #555;
+    /* 원하는 스타일 추가 */
+}
+
+.csc-contact {
+    margin-top: 30px;
+    /* 원하는 스타일 추가 */
+}

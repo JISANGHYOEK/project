@@ -9,6 +9,7 @@ import SignupPage from "./components/SignupPage/SignupPage";
 import MainPage from "./components/MainPage/MainPage";
 import TermsPage from "./components/Footer/TermsPage";
 import PersonalPage from "./components/Footer/PersonalPage";
+import CscPage from "./components/Csc/CscPage";
 
 function LandingPage() {
   return (
@@ -33,6 +34,7 @@ function App() {
         <Route path="/MainPage" element={<MainPage/>} />
         <Route path="/TermsPage" element={<TermsPage/>} />
         <Route path="/PersonalPage" element={<PersonalPage/>} />
+        <Route path="/CscPage" element={<CscPage/>} />
       </Routes>
     </Router>
   );
