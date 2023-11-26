@@ -2,32 +2,32 @@ export const faqs = [
   {
     id: 1,
     question: "문의내용",
-    answer: "관리자답변 ",
+    answer: "관리자답변1 ",
   },
   {
     id: 2,
     question: "문의내용2",
-    answer: "관리자답변",
+    answer: "관리자답변2",
   },
   {
     id: 3,
     question: "문의내용3",
-    answer: "관리자답변",
+    answer: "관리자답변3",
   },
   {
     id: 4,
     question: "문의내용4",
-    answer: "관리자답변",
+    answer: "관리자답변4",
   },
   {
     id: 5,
     question: "문의내용5",
-    answer: "관리자답변",
+    answer: "관리자답변5",
   },
   {
     id: 6,
     question: "문의내용6",
-    answer: "관리자답변",
+    answer: "관리자답변6",
   },
   {
     id: 7,

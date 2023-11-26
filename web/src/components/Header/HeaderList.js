@@ -14,7 +14,7 @@ function HeaderComponent2(props) {
         <NavItem>
           문의하기
           <DropdownMenu>
-            <Link to="/faq">문의목록</Link>
+            <Link to="/faq">자주묻는질문</Link>
           </DropdownMenu>
         </NavItem>
       </StyledLink>

@@ -1,18 +1,15 @@
-// FAQItem.js
-import React, { useState } from "react";
+import React from "react";
 import { useParams } from "react-router-dom";
 import { faqs } from "./FAQData";
 import HeaderComponent from "../Header/Header";
 import FooterComponent from "../Footer/Footer";
-import { Box } from "@mui/material";
+import { Box, Container } from "@mui/material";
+import FAQTable from "./FAQTable";
 
 function FAQItem({ faq: propFaq }) {
-  // const [isOpen, setIsOpen] = useState(false);
   const { id } = useParams();
 
-  // id 파라미터에 해당하는 FAQ 항목찾기
   const faq = propFaq ? propFaq : faqs.find((faq) => faq.id === Number(id));
-  // const toggleOpen = () => setIsOpen(!isOpen);
 
   if (!faq) {
     return <div>Loading...</div>;
@@ -21,8 +18,34 @@ function FAQItem({ faq: propFaq }) {
   return (
     <div>
       <HeaderComponent />
-      <Box>{faq.question}</Box>
-      <Box>{faq.answer}</Box>
+      <Container sx={{ height: "100%" }}>
+        <Box
+          sx={{
+            display: "block",
+            wordBreak: "break-all",
+            fontSize: "1.75em",
+            fontWeight: 400,
+            textAlign: "left",
+            background: "#f6f6f6",
+            padding: "30px",
+            marginBottom: "20px",
+          }}
+        >
+          제목: {faq.question}
+        </Box>
+        <Box
+          sx={{
+            padding: "20px",
+            background: "#ffffff",
+            boxShadow: "0px 2px 4px rgba(0, 0, 0, 0.1)",
+            height: "100%",
+            marginBottom: "10px",
+          }}
+        >
+          {faq.answer}
+        </Box>
+      </Container>
+      <FAQTable faqs={faqs} />
       <FooterComponent />
     </div>
   );
