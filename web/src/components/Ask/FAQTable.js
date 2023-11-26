@@ -42,7 +42,7 @@ const FAQTable = ({ faqs }) => {
         page={currentPage}
         onChange={handlePageChange}
       />
-      {currentPage === totalPages && <Box sx={{ height: "35vh" }} />}
+      {currentPage === totalPages && <Box sx={{ height: "48vh" }} />}
     </Container>
   );
 };
