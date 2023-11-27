@@ -8,6 +8,7 @@ const SignupPage = () => {
     // 입력 값 상태 관리
     const [userInfo, setUserInfo] = useState({
         username: '',
+        uid: '',
         email: '',
         password: '',
         confirmPassword: '',
@@ -27,7 +28,11 @@ const SignupPage = () => {
         e.preventDefault(); // 기본 제출 동작 방지
         // 여기에 폼 제출 로직을 추가하세요
         // 예: 서버에 데이터를 보내거나 다른 작업을 수행할 수 있습니다.
-        if (userInfo.username === '') {
+        if (userInfo.username=== '') {
+            alert('이름을 입력해주세요.');
+            return;
+        }
+        else if (userInfo.uid=== '') {
             alert('아이디를 입력해주세요.');
             return;
         }
@@ -61,12 +66,22 @@ const SignupPage = () => {
                 <label className="signup-label1">미래투자 회원가입</label><br/>
                 <form className="signup-form" onSubmit={handleSubmit}>
                     <div className="form-field">
-                        <label htmlFor="username">아이디</label>
+                        <label htmlFor="username">이름</label>
                         <input
                             type="text"
                             id="username"
                             name="username"
                             value={userInfo.username}
+                            onChange={handleInputChange}
+                        />
+                    </div>
+                    <div className="form-field">
+                        <label htmlFor="uid">아이디</label>
+                        <input
+                            type="text"
+                            id="uid"
+                            name="uid"
+                            value={userInfo.uid}
                             onChange={handleInputChange}
                         />
                     </div>
