@@ -10,7 +10,7 @@ const VipPage = () =>{
         <div>
             <HeaderComponent/>
             <div className="form">
-                <label className="label-title">미래투자 V.I.P 회원서비스<br/>운영방식과 매매법에 관하여</label>
+                <label className="label-title">미래투자 <span>V.I.P</span> 회원서비스<br/>운영방식과 매매법에 관하여</label>
 
             </div>
             <FooterComponent/>

@@ -11,3 +11,7 @@
     font-size: 20pt;
     text-align: center; /* 텍스트를 가운데 정렬합니다. */   
 }
+
+.label-title span {
+    color: red; /* V.I.P 텍스트 색상을 빨간색으로 변경합니다. */
+  }
