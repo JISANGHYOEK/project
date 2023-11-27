@@ -1,6 +1,18 @@
 const express = require("express");
 const app = express();
 const test = require("./Router/test");
+const mysql = require("mysql");
+
+const con = mysql.createConnection({
+  host: "localhost",
+  user: "root",
+  password: "alstjd48119!",
+});
+
+con.connect(function (err) {
+  if (err) throw err;
+  console.log("connect");
+});
 
 const mysql = require("mysql2/promise");
 const bodyParser = require("body-parser");
