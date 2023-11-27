@@ -28,7 +28,7 @@ const AskPage = () => {
     return (
         <div>
         <MainHeaderComponent />
-        <div className="title-label"><label>1:1 문의하기</label><hr></hr></div>
+        <div className="title-label"><label>1:1 문의하기</label></div>
         <div className="form-container">
                 <form onSubmit={handleSubmit}>
                     <label>

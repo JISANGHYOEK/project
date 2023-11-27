@@ -76,9 +76,9 @@ const CscPage = () => {
     <div>
       <HeaderComponent />
 
-      <div className="csc-container">
-        <h1 className="csc-title">자주 묻는 질문</h1>
-
+      
+        <div className="csc-title">자주 묻는 질문</div>
+        <div className="csc-container">
         <div className="faq-list">
           {faqData.map((faq, index) => (
             <div
