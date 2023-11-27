@@ -70,7 +70,7 @@
 //             res.status(400).send('이상한 URL 입력함')
 //         }
 //         res.render('edit.ejs', {result = result}) // edit.ejs 파일에 박아서 보내줌, result.title & result.content 등
-        
+
 //     } catch (e) {
 //         console.log(e)
 //         res.status(400).send('이상한 URL 입력함')
@@ -82,15 +82,14 @@
 //         let result = awiat db.collection('post').updateOne({ _id :  new ObjecteID(req.params.id)} , // new ObjecteID('') - db 에 존재하는 식별 번호
 //         {$set : { title : req.body.title, content : req.body.content }}) //$set : 덮어쓰기
 //             res.status(400).send('이상한 URL 입력함') // 400 - 원하는 에러 메세지
-        
+
 //         res.redirect('/list')
-        
+
 //     } catch (e) {
 //         console.log(e)
 //         res.status(400).send('이상한 URL 입력함')
 //     }
 //   })
-
 
 //         res.redirect('/list')
 
@@ -131,33 +130,17 @@
 // //회원가입 - 이름, 아이디, 비밀번호, 비밀번호 확인, 전화번호 - mysql
 // //
 
-// // 필요한 모듈 import
-// const express = require('express');
-// const mysql = require('mysql');
+//   // 비밀번호 확인
+//     if (password !== confirmPassword) {
+//     return res.status(400).json({ error: '비밀번호가 일치하지 않습니다.' });
+//     }
 
-// // Express 애플리케이션 생성
-// const app = express();
-
-// // MySQL 데이터베이스 연결 설정
-// const connection = mysql.createConnection({
-//   host: 'localhost',
-//   user: '사용자명',
-//   password: '비밀번호',
-//   database: '데이터베이스명'
-// });
-
-  // 비밀번호 확인
-    if (password !== confirmPassword) {
-    return res.status(400).json({ error: '비밀번호가 일치하지 않습니다.' });
-    }
-  
-  // 비밀번호 해싱
-    bcrypt.hash(password, 10, (err, hashedPassword) => {
-      if (err) {
-        console.error('비밀번호 해싱 오류:', err);
-        return res.status(500).json({ error: '비밀번호 해싱에 실패했습니다.' });
-      }
-    
+//   // 비밀번호 해싱
+//     bcrypt.hash(password, 10, (err, hashedPassword) => {
+//       if (err) {
+//         console.error('비밀번호 해싱 오류:', err);
+//         return res.status(500).json({ error: '비밀번호 해싱에 실패했습니다.' });
+//       }
 
 // // POST 요청 처리를 위한 미들웨어 설정
 // app.use(express.urlencoded({ extended: false }));
