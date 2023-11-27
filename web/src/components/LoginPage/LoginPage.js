@@ -108,7 +108,7 @@ const StyledButton = styled.button`
     height: 50px; /* 원하는 높이로 조절하세요*/
     padding: 10px;
     font-size: 16px;
-    background-color: blue;
+    background-color: orangered;
     color: white;
     border: none;
     cursor: pointer;
@@ -116,7 +116,7 @@ const StyledButton = styled.button`
     margin-botton: 10px;
 
     &:hover {
-        background-color: blue;
+        background-color: orangered;
         text-decoration: underline;
     }
 `;

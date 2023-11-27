@@ -22,7 +22,7 @@ label {
 
 .signup-button {
     padding: 8px 20px;
-    background-color: blue;
+    background-color: orangered;
     color: white;
     border: none;
     border-radius: 3px;
@@ -64,11 +64,12 @@ label {
 }
 
 .signup-page .signup-label1 {
+    margin-left: 10px;
     text-align: center; /* 텍스트 가운데 정렬 */
-    padding: 20px 120px; /* 여백 추가 (예시로 지정된 값) */
-    border: 2px solid blue; /* 테두리 스타일 및 색상 지정 */
+    padding: 20px 100px; /* 여백 추가 (예시로 지정된 값) */
+    border: 2px solid orangered; /* 테두리 스타일 및 색상 지정 */
     color: white; /* 글자색을 흰색으로 변경 */
-    background-color: blue; /* 배경색을 파란색으로 변경 */
+    background-color: orangered; /* 배경색을 파란색으로 변경 */
     border-radius: 4px; /* 테두리 모서리 둥글게 설정 (선택사항) */
     font-weight: bold; /* 글자를 굵게 설정 */    
 }
@@ -103,9 +104,9 @@ label {
 .signup-page .signup-button1{
     text-align: center; /* 텍스트 가운데 정렬 */
     padding: 20px 103px; /* 여백 추가 (예시로 지정된 값) */
-    border: 2px solid blue; /* 테두리 스타일 및 색상 지정 */
+    border: 2px solid orangered; /* 테두리 스타일 및 색상 지정 */
     color: white; /* 글자색을 흰색으로 변경 */
-    background-color: blue; /* 배경색을 파란색으로 변경 */
+    background-color: orangered; /* 배경색을 파란색으로 변경 */
     border-radius: 4px; /* 테두리 모서리 둥글게 설정 (선택사항) */
     font-weight: bold; /* 글자를 굵게 설정 */
     text-decoration: none; /* 밑줄 제거 */
@@ -113,8 +114,8 @@ label {
 .signup-page .signup-button2{
     text-align: center; /* 텍스트 가운데 정렬 */
     padding: 20px 103px; /* 여백 추가 (예시로 지정된 값) */
-    border: 2px solid blue; /* 테두리 스타일 및 색상 지정 */
-    color: blue; /* 글자색을 흰색으로 변경 */
+    border: 2px solid orange; /* 테두리 스타일 및 색상 지정 */
+    color: orange; /* 글자색을 흰색으로 변경 */
     background-color: white; /* 배경색을 파란색으로 변경 */
     border-radius: 4px; /* 테두리 모서리 둥글게 설정 (선택사항) */
     font-weight: bold; /* 글자를 굵게 설정 */
