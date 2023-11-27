@@ -14,7 +14,7 @@ con.connect(function (err) {
   console.log("connect");
 });
 
-const mysql = require("mysql");
+const mysql = require("mysql2/promise");
 const bodyParser = require("body-parser");
 
 app.use("/api", test);
@@ -32,6 +32,31 @@ const db = mysql.createConnection({
   user: "root",
   password: "password",
   database: "database_name",
+});
+
+//글 작성 페이지 이동
+app.get("/write", (req, res) => {
+  res.render("write.ejs");
+});
+
+//서버에서 유저의 POST 기능 처리
+app.post("/요청보낸URL", async (req, res) => {
+  const { title, Username, Email, content } = req.body; // req.body에서 title과 content를 추출
+
+  if (!title) {
+    res.send("제목이 없습니다.");
+    return;
+  }
+
+  const query =
+    "INSERT INTO post (title, Username, Email, content) VALUES (?, ?, ?, ?)"; // ? - SQL 쿼리 내 parmas
+  try {
+    await db.query(query, [title, Username, Email, content]);
+    res.redirect("/처리후 이동할 URL");
+  } catch (err) {
+    console.error(err);
+    res.status(500).send("Server ERR");
+  }
 });
 
 // 문의글 작성 페이지 가져오기
@@ -117,7 +142,8 @@ app.delete("/delete", (req, res) => {
 
 // 회원가입 요청 처리 - mysql
 app.post("/signup", (req, res) => {
-  const { name, id, password, confirmPassword, phoneNumber, email } = req.body;
+  const { Username, id, password, confirmPassword, phoneNumber, Email } =
+    req.body;
 });
 // 다른 회원의 아이디와 중복 여부 확인
 const checkDuplicateQuery = "SELECT * FROM users WHERE username = ?";
@@ -146,10 +172,10 @@ connection.query(checkDuplicateQuery, [username], (err, rows) => {
 
   // 회원가입 정보를 데이터베이스에 저장
   const query =
-    "INSERT INTO users (name, id, password, phoneNumber, email) VALUES (?, ?, ?, ?, ?)";
+    "INSERT INTO users (Username, id, password, phoneNumber, Email) VALUES (?, ?, ?, ?, ?)";
   connection.query(
     query,
-    [name, id, hashedPassword, phoneNumber],
+    [Username, id, hashedPassword, phoneNumber],
     (err, result) => {
       if (err) {
         console.error("회원가입 오류:", err);
