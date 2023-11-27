@@ -64,80 +64,39 @@ app.get('/write/ : id', async(req,res) => {
 })
 
 //글 수정
-// app.get('/edit/ : id', async(req,res) => {
-//     try {
-//         let result = awiat db.collection('post').findOne({ _id :  new ObjecteID(req.params.id)}) // new ObjecteID('') - db 에 존재하는 식별 번호
-//         if(result == null) {
-//             res.status(400).send('이상한 URL 입력함')
-//         }
-//         res.render('edit.ejs', {result = result}) // edit.ejs 파일에 박아서 보내줌, result.title & result.content 등
-        
-//     } catch (e) {
-//         console.log(e)
-//         res.status(400).send('이상한 URL 입력함')
-//     }
-// })
-
-// app.post('/edit/', async (req,res) => {
-//     try {
-//         let result = awiat db.collection('post').updateOne({ _id :  new ObjecteID(req.params.id)} , // new ObjecteID('') - db 에 존재하는 식별 번호
-//         {$set : { title : req.body.title, content : req.body.content }}) //$set : 덮어쓰기
-//             res.status(400).send('이상한 URL 입력함') // 400 - 원하는 에러 메세지
-        
-//         res.redirect('/list')
-        
-//     } catch (e) {
-//         console.log(e)
-//         res.status(400).send('이상한 URL 입력함')
-//     }
-//   })
-const mysql = require('mysql');
-const express = require('express');
-const app = express();
-const bodyParser = require('body-parser');
-
-app.use(bodyParser.urlencoded({ extended: true }));
-
-// MySQL connection
-db.connect((err) => {
-    if (err) throw err;
-    console.log("Connected to MySQL");
-  });
-  
-  app.get('/edit/:id', (req, res) => { // /edit/:id - 경로
-    let sql = `SELECT * FROM post WHERE id = ?`; // ? - SQL 쿼리 내 parmas
-    db.query(sql, [req.params.id], (err, result) => {
-        if (err) console.log(err);
-        else {
-            if(result.length == 0) {
-                res.status(400).send('이상한 URL 입력함');
-            } else {
-                res.render('edit.ejs', {result: result[0]})
-            }
+app.get('/edit/ : id', async(req,res) => {
+    try {
+        let result = awiat db.collection('post').findOne({ _id :  new ObjecteID(req.params.id)}) // new ObjecteID('') - db 에 존재하는 식별 번호
+        if(result == null) {
+            res.status(400).send('이상한 URL 입력함')
         }
-    });
-  });
-  
-  app.post('/edit/:id', (req, res) => { // /edit/:id - 경로
-    let sql = `UPDATE post SET title = ?, content = ? WHERE id = ?`; // ? - SQL 쿼리 내 parmas
-    let values = [req.body.title, req.body.content, req.params.id];
-    db.query(sql, values, (err, result) => {
-        if (err) {
-            console.log(err);
-            res.status(400).send('이상한 URL 입력함');
-        } else {
-            res.redirect('/list');
-        }
-    });
-  });
+        res.render('edit.ejs', {result = result}) // edit.ejs 파일에 박아서 보내줌, result.title & result.content 등
+        
+    } catch (e) {
+        console.log(e)
+        res.status(400).send('이상한 URL 입력함')
+    }
+})
 
+app.post('/edit/', async (req,res) => {
+    try {
+        let result = awiat db.collection('post').updateOne({ _id :  new ObjecteID(req.params.id)} , // new ObjecteID('') - db 에 존재하는 식별 번호
+        {$set : { title : req.body.title, content : req.body.content }}) //$set : 덮어쓰기
+            res.status(400).send('이상한 URL 입력함') // 400 - 원하는 에러 메세지
+        
+        res.redirect('/list')
+        
+    } catch (e) {
+        console.log(e)
+        res.status(400).send('이상한 URL 입력함')
+    }
+  })
 
 //글 삭제 - ejs 파일 내 <body> 하단 부
 <script>
 for (let i = 0; i < '<%= 글목록.length %>'; i++) {
     document.querySelectorAll('.delete')[0].addEventListener('click', function(){ //querySelector-원하는 html 요소를 찾기, addEventListener-클릭시 실행할 코드를 입력
       fetch('/delete?docid=삭제할 게시물id', { // fetch() - AJAX 요청, 새로고침 없이 GET 요청 날림
-        //삭제할 게시물id - 실제로 삭제할 게시물 id 넣어야함
           method : 'DELETE'
       }).then((r)=>{
         if(r.status == 200) {
@@ -218,7 +177,6 @@ const checkDuplicateQuery = 'SELECT * FROM users WHERE username = ?';
         console.error('비밀번호 해싱 오류:', err);
         return res.status(500).json({ error: '비밀번호 해싱에 실패했습니다.' });
       }
-    
 
   // 회원가입 정보를 데이터베이스에 저장
     const query = 'INSERT INTO users (name, id, password, phoneNumber) VALUES (?, ?, ?, ?)';
