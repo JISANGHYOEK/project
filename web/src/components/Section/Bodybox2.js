@@ -2,6 +2,7 @@ import React from "react";
 import { Box } from "@mui/material";
 import styled from "styled-components";
 
+
 function Bodybox2() {
   return (
     <div>
@@ -26,7 +27,7 @@ function Bodybox2() {
         padding={0.5}
       >
         <StyledLink href="https://open.kakao.com/me/cc12" target="_blank" rel="noopener noreferrer">
-          카카오톡 바로가기
+        <StyledImage src="/katalk.png" alt="KakaoTalk" width="230" height="223" />
         </StyledLink>
       </StyledBox>
     </div>
@@ -48,6 +49,12 @@ const StyledLink = styled.a`
   font: 600 20px/123% Inter, sans-serif;
   text-decoration: none;
   color: inherit;
+`;
+
+const StyledImage = styled.img`
+  width: 100%;
+  height: 100%;
+  border-radius: 5px; /* 설정할 테두리 반경 값 */
 `;
 
 export default Bodybox2;
