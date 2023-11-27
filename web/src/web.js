@@ -1,4 +1,4 @@
-import "./App.css";
+import "./web.css";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import HeaderComponent from "./components/Header/Header";
 import Sectioncomponent from "./components/Section/Section";
@@ -20,7 +20,7 @@ import VipPage from "./components/Vip/VipPage";
 
 function LandingPage() {
   return (
-    <div className="App">
+    <div className="web">
       <HeaderComponent />
       <Sectioncomponent />
       <div className="Footer">
@@ -30,7 +30,7 @@ function LandingPage() {
   );
 }
 
-function App() {
+function web() {
   return (
     <Router>
       <Routes>
@@ -52,4 +52,4 @@ function App() {
   );
 }
 
-export default App;
+export default web;
