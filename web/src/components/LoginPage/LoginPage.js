@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import HeaderComponent from "../Header/Header";
 import FooterComponent from "../Footer/Footer";
+import axios from "axios";
 
 const LoginPage = () => {
+  const navigate = useNavigate();
   const [id, setId] = useState("");
   const [password, setPassword] = useState("");
 
@@ -22,10 +24,25 @@ const LoginPage = () => {
       alert("아이디와 비밀번호를 모두 입력해주세요.");
       return;
     }
-    // 로그인 처리 로직을 추가하세요 (예: 서버로 요청을 보내거나 상태를 변경하여 로그인 여부 판단 등)
-    console.log("Id:", id);
-    console.log("Password:", password);
-    // 이후 로그인 성공 시 다음 단계로 넘어갈 수 있습니다.
+
+    // 서버로 보낼 데이터
+    const data = { UserID: id, Password: password };
+
+    // axios를 사용하여 서버에 로그인 요청을 보냅니다.
+    axios
+      .post("/api/login", data)
+      .then((response) => {
+        console.log(response);
+        navigate("/MainPage");
+
+        // 로그인 성공 시 처리 로직을 작성하세요.
+        // 예: 로그인 상태를 관리하는 상태를 변경하거나, 메인 페이지로 이동 등
+      })
+      .catch((error) => {
+        console.error(error);
+        // 로그인 실패 시 처리 로직을 작성하세요.
+        // 예: 에러 메시지를 표시하거나, 입력 필드를 초기화 등
+      });
   };
 
   return (
@@ -52,9 +69,7 @@ const LoginPage = () => {
                 />
               </div>
               <div>
-                <Link to="/MainPage">
-                  <StyledButton type="submit">로그인</StyledButton>
-                </Link>
+                <StyledButton type="submit">로그인</StyledButton>
               </div>
               <div>
                 <StyledLink to="/forgot-password">비밀번호 찾기</StyledLink>

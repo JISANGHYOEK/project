@@ -1,10 +1,16 @@
 const express = require("express");
-const app = express();
 const api = require("./Router/api");
-const db = require("./db");
+const { db, app } = require("./db");
 const bodyParser = require("body-parser");
+const cors = require("cors");
 
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(cors());
+app.use(
+  cors({
+    origin: "http://localhost:3000", // 클라이언트의 도메인을 지정합니다.
+  })
+);
 app.use(express.json());
 app.use("/api", api);
 
@@ -106,35 +112,6 @@ app.listen(port, () => {
 //   });
 // });
 
-//   // 비밀번호 확인
-//   if (password !== confirmPassword) {
-//     return res.status(400).json({ error: "비밀번호가 일치하지 않습니다." });
-//   }
-
-//   // 비밀번호 해싱
-//   bcrypt.hash(password, 10, (err, hashedPassword) => {
-//     if (err) {
-//       console.error("비밀번호 해싱 오류:", err);
-//       return res.status(500).json({ error: "비밀번호 해싱에 실패했습니다." });
-//     }
-//   });
-
-//   // 회원가입 정보를 데이터베이스에 저장
-//   const query =
-//     "INSERT INTO users (name, id, password, phoneNumber, email) VALUES (?, ?, ?, ?, ?)";
-//   connection.query(
-//     query,
-//     [name, id, hashedPassword, phoneNumber],
-//     (err, result) => {
-//       if (err) {
-//         console.error("회원가입 오류:", err);
-//         return res.status(500).json({ error: "회원가입에 실패했습니다." });
-//       }
-//       res.status(200).json({ message: "회원가입이 완료되었습니다." });
-//     }
-//   );
-// });
-
 // // 회원가입 처리 - passport 라이브러리 사용
 // //npm install express-session passport passport-local
 // const session = require("express-session");
@@ -155,10 +132,6 @@ app.listen(port, () => {
 // app.get("/login", async (req, res) => {
 //   res.render("login.ejs");
 // });
-
-// // 비밀번호 DB 저장시 Hashing 하기
-// // npm install bcrypt - 해싱 라이브러리
-// const bcrypt = require("bcrypt");
 
 // //passport 라이브러리 - DB 내 존재하는 아이디 비밀번호 검증(Hashing)
 // passport.use(

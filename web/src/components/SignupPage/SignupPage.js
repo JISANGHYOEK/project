@@ -2,10 +2,11 @@ import React, { useState } from "react";
 import "./SignupPage.css";
 import HeaderComponent from "../Header/Header";
 import FooterComponent from "../Footer/Footer";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 
 const SignupPage = () => {
+  const navigate = useNavigate();
   // 입력 값 상태 관리
   const [userInfo, setUserInfo] = useState({
     UserID: "",
@@ -28,21 +29,18 @@ const SignupPage = () => {
   const handleSubmit = (e) => {
     e.preventDefault(); // 기본 제출 동작 방지
 
-    // ...
-
     // 모든 유효성 검사를 통과한 경우
     axios
-      .post("http://localhost:5000/signupPage", userInfo)
+      .post("http://localhost:5000/api/signupPage", userInfo)
       .then((response) => {
-        // 서버에서 응답을 받으면 이 부분이 실행됩니다.
-        // 'response' 객체를 사용해 서버의 응답을 처리하세요.
-
-        // 응답을 확인하고, 상태 코드에 따라 다른 처리를 수행합니다.
         if (response.status === 200) {
           alert("회원 가입이 성공적으로 완료되었습니다.");
-          // 회원 가입 후 로그인 페이지로 이동하거나, 다른 처리를 수행할 수 있습니다.
+          navigate("/login");
+          return;
         } else if (response.status === 409) {
           alert("이미 사용 중인 아이디입니다.");
+        } else if (response.status === 400) {
+          alert("비밀번호가 일치하지 않습니다.");
         } else {
           alert("회원 가입에 실패했습니다. 다시 시도해주세요.");
         }
