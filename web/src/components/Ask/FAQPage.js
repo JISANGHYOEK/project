@@ -19,7 +19,7 @@ function FAQPage({ faqs }) {
           borderBottom: "2px solid black",
         }}
       >
-        FAQ 게시판
+        1대1 문의내역
       </Box>
       <FAQTable faqs={faqs} />
       <FooterComponent />

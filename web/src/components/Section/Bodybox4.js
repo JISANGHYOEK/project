@@ -5,7 +5,7 @@ function Bodybox4() {
     return (
     
     <Box
-        width="60%"
+        width="68%"
         height={250}
         bgcolor="white"
         marginTop={2}

@@ -58,7 +58,7 @@ const SignupPage = () => {
         <div>
             <HeaderComponent />
             <div className="signup-page">
-                <label className="signup-label1">만랩파트너스 회원가입</label><br/>
+                <label className="signup-label1">미래투자 회원가입</label><br/>
                 <form className="signup-form" onSubmit={handleSubmit}>
                     <div className="form-field">
                         <label htmlFor="username">아이디</label>

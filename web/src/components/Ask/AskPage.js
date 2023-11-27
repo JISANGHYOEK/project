@@ -5,6 +5,7 @@ import './AskPage.css'
 const AskPage = () => {
     
     const [formData, setFormData] = useState({
+        title: '',
         name: '',
         email: '',
         message: ``
@@ -30,6 +31,10 @@ const AskPage = () => {
         <div className="title-label"><label>1:1 문의하기</label><hr></hr></div>
         <div className="form-container">
                 <form onSubmit={handleSubmit}>
+                    <label>
+                        제목:
+                        <input type="text" name="title" value={formData.name} onChange={handleChange}/>
+                    </label>
                     <label>
                         이름:
                         <input type="text" name="name" value={formData.name} onChange={handleChange}/>

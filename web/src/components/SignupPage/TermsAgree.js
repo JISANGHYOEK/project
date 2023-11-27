@@ -32,7 +32,7 @@ return (
         <HeaderComponent />
         <div className="signup-page">
             <div>
-                <label className="signup-label1">만랩파트너스 회원가입</label><br/><br/><br/>
+                <label className="signup-label1">미래투자 회원가입</label><br/><br/><br/>
                 <label className="signup-label2">회원가입약관 및 개인정보처리방침안내의 내용에<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;동의하셔야 회원가입 하실 수 있습니다.</label>
                 <br/><br/><Checkbox checked={terms} onChange={setTerms}>
                     <label htmlFor="agree_check_used">[필수] 이용약관 동의</label><br/>

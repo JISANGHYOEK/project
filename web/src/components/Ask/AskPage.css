@@ -2,7 +2,7 @@
 
 .title-label{
     margin-top: 100px;
-    margin-left: 700px;
+    margin-left: 500px;
     text-align: center; /* 내용을 가운데 정렬하기 위한 설정 */
     font-size: 36px;
     font-weight: bold;
@@ -14,12 +14,12 @@
 .form-container {
     margin-top: 50px;
     margin-bottom: 100px;
-    max-width: 600px;
+    max-width: 550px;
     padding: 20px;
     border: 1px solid #ccc;
     border-radius: 5px;
     max-width: 800px;
-    margin-left: 550px; 
+    margin-left: 350px; 
 }
 
 .form-container label {
