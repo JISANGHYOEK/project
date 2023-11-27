@@ -15,6 +15,8 @@ import AskPage from "./components/Ask/AskPage";
 import FAQPage from "./components/Ask/FAQPage";
 import FAQItem from "./components/Ask/FAQItem";
 import { faqs } from "./components/Ask/FAQData";
+import VipPage from "./components/Vip/VipPage";
+
 
 function LandingPage() {
   return (
@@ -44,6 +46,7 @@ function App() {
         <Route path="/AskPage" element={<AskPage />} />
         <Route path="/faq" element={<FAQPage faqs={faqs} />} />
         <Route path="/faq/:id" element={<FAQItem />} />
+        <Route path="/VipPage" element={<VipPage/>} />
       </Routes>
     </Router>
   );

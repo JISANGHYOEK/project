@@ -1,0 +1,13 @@
+.form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+
+.label-title{
+    font-size: 20pt;
+    text-align: center; /* 텍스트를 가운데 정렬합니다. */   
+}

@@ -4,7 +4,9 @@ import styled from "styled-components";
 function HeaderComponent2(props) {
   return (
     <Navigation>
+      <StyledLink to="/VipPage">
       <NavItem>V.I.P 회원</NavItem>
+      </StyledLink>
       <NavItem>무료 추천 종목</NavItem>
       <NavItem>무료 추천 종목 수익률</NavItem>
       <StyledLink to="/CscPage">
@@ -27,9 +29,11 @@ const DropdownMenu = styled.div`
   position: absolute
   top: 100%;
   left: 0;
-  background-color: #fff;
   width: auto; // 수정된 코드
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  a {
+    text-decoration: none;
+  }
 `;
 
 const Navigation = styled.div`
