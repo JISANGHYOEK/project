@@ -33,7 +33,7 @@ const AskPage = () => {
                 <form onSubmit={handleSubmit}>
                     <label>
                         제목:
-                        <input type="text" name="title" value={formData.name} onChange={handleChange}/>
+                        <input type="text" name="title" value={formData.title} onChange={handleChange}/>
                     </label>
                     <label>
                         이름:
