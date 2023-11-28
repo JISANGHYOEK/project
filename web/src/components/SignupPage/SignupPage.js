@@ -37,7 +37,7 @@ const SignupPage = () => {
 
     // 모든 유효성 검사를 통과한 경우
     axios
-      .post("http://localhost:5000/api/signupPage", userInfo)
+      .post("http://10000mr.com:8080/api/signupPage", userInfo)
       .then((response) => {
         if (response.status === 200) {
           alert("회원 가입이 성공적으로 완료되었습니다.");
@@ -48,7 +48,8 @@ const SignupPage = () => {
         } else if (response.status === 400) {
           alert("비밀번호가 일치하지 않습니다.");
         } else {
-          alert("회원 가입에 실패했습니다. 다시 시도해주세요.");
+          alert("회원 가입에 실패했습니다. 다시.");
+          
         }
       })
       .catch((error) => {
