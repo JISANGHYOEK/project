@@ -8,13 +8,13 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cors());
 app.use(
   cors({
-    origin: "http://localhost:3000", // 클라이언트의 도메인을 지정합니다.
+    origin: "http://10000mr.com:80", // 클라이언트의 도메인을 지정합니다.
   })
 );
 app.use(express.json());
 app.use("/api", api);
 
-const port = 80; //React가 3000번 포트를 사용하기 때문에 node 서버가 사용할 포트넘버는 다른 넘버로 지정해준다.
+const port = 8080; //React가 3000번 포트를 사용하기 때문에 node 서버가 사용할 포트넘버는 다른 넘버로 지정해준다.
 app.listen(port, () => {
   console.log(`Listening on port ${port}`);
 });
