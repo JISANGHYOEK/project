@@ -4,8 +4,14 @@ import HeaderComponent from "../Header/Header";
 import FooterComponent from "../Footer/Footer";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
+import ReCAPTCHA from 'react-google-recaptcha';
 
 const SignupPage = () => {
+
+  function onChange(value) {
+    console.log('Captcha value:', value);
+  }
+
   const navigate = useNavigate();
   // 입력 값 상태 관리
   const [userInfo, setUserInfo] = useState({
@@ -116,7 +122,13 @@ const SignupPage = () => {
               value={userInfo.PhoneNumber}
               onChange={handleInputChange}
             />
-          </div>
+            </div>
+            <div className="form-field">
+            <ReCAPTCHA
+              sitekey="6Le4JB4pAAAAAIqoYyHGLT-Be5RF-6QOanBePmMV"
+              onChange={onChange}
+            />
+            </div>
           <div className="form-field">
             <button className="signup-button" type="submit">
               가입하기
