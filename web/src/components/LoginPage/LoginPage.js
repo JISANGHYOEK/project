@@ -30,7 +30,7 @@ const LoginPage = () => {
 
     // axios를 사용하여 서버에 로그인 요청을 보냅니다.
     axios
-      .post("/api/login", data)
+      .post("/api/login", data, { withCredentials: true })
       .then((response) => {
         console.log(response);
         navigate("/MainPage");

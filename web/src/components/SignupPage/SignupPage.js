@@ -37,7 +37,9 @@ const SignupPage = () => {
 
     // 모든 유효성 검사를 통과한 경우
     axios
-      .post("http://10000mr.com:8080/api/signupPage", userInfo)
+      .post("http://10000mr.com:8080/api/signupPage", userInfo, {
+        withCredentials: true
+      })
       .then((response) => {
         if (response.status === 200) {
           alert("회원 가입이 성공적으로 완료되었습니다.");

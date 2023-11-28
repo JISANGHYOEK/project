@@ -5,10 +5,10 @@ const bodyParser = require("body-parser");
 const cors = require("cors");
 
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(cors());
 app.use(
   cors({
-    origin: "http://10000mr.com:80", // 클라이언트의 도메인을 지정합니다.
+    origin: 'http://10000mr.com',
+    credentials: true,
   })
 );
 app.use(express.json());
