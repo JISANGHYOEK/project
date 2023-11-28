@@ -1,7 +1,7 @@
 {
    "scripts": {
-      "server": "cd server && nodemon server",
-      "client": "cd web && npm start",
+      "server": "cd ./Server && nodemon server",
+      "client": "cd ./web && npm start",
       "start": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\""
    },
    "dependencies": {
