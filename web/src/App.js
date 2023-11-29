@@ -51,10 +51,7 @@ function App() {
         <Route path="/VipPage" element={<VipPage />} />
         <Route path="/FreeRePage" element={<FreeRePage />} />
         <Route path="/FreeRePage/:FreeRePageID" element={<FreeReViewPage />} />
-        <Route
-          path="/FreeRePage/FreeReWritePage"
-          element={<FreeReWritePage />}
-        />
+        <Route path="/FreeRePage/FreeReWritePage" element={<FreeReWritePage />}/>
       </Routes>
     </Router>
   );

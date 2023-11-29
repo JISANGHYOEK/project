@@ -5,6 +5,8 @@ import "./FreeReView.css";
 import HeaderComponent from "../Header/Header";
 import FooterComponent from "../Footer/Footer";
 
+//상세보기 페이지
+
 function FreeReViewPage() {
   const { FreeReId } = useParams();
   const [question, setQuestion] = useState({});
