@@ -3,7 +3,7 @@ import MainHeaderComponent from "../Header/MainHeader";
 import FooterComponent from "../Footer/Footer";
 import CscPageitem from "./CscPageitem";
 
-const MainCscPage = () => {
+function MainCscPage() {
 
   return (
     <div>
