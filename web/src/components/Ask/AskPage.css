@@ -1,5 +1,4 @@
 /* AskPage.css */
-
 .title-label {
   margin-top: 100px;
   /* margin-left: 500px; */
@@ -46,6 +45,7 @@
   border-radius: 4px;
   box-sizing: border-box;
   height: 300px;
+  resize: none;
 }
 
 .form-container button[type="submit"] {
