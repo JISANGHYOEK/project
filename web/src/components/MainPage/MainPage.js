@@ -3,15 +3,13 @@ import MainHeaderComponent from "../Header/MainHeader";
 import Sectioncomponent from "../Section/Section";
 import FooterComponent from "../Footer/Footer";
 
-const  MainPage = () =>{
+function MainPage() {
 
     return(
-        <div className="App">
+        <div>
             <MainHeaderComponent />
             <Sectioncomponent />
-            <div className="Footer">
-                <FooterComponent />
-            </div>
+            <FooterComponent />
         </div>
     );
 }

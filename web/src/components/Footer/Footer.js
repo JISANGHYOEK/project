@@ -10,11 +10,16 @@ function FooterComponent() {
         <Link to="/TermsPage" className="FooterItemLink">
           <FooterItem>이용약관</FooterItem>
         </Link>
+
         <Link to="/PersonalPage" className="FooterItemLink">
           <FooterItem>개인정보 처리방침</FooterItem>
         </Link>
-        <FooterItem>문의하기</FooterItem>
+
+        <Link to="/AskPage" className="FooterItemLink">
+          <FooterItem>문의하기</FooterItem>
+        </Link>
       </FooterContent>
+
       <Copyright>&copy; 2023 만랩파트너스</Copyright>
     </FooterContainer>
   );
