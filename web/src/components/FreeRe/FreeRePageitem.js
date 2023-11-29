@@ -6,6 +6,8 @@ import FreeReTableRow from "./FreeReTableRow";
 import FreeReWriteHeader from "./FreeReWriteHeader";
 import { Link } from "react-router-dom";
 
+import "./FreeRe.css";
+
 function FreeRePageitem() {
   const [data, setData] = useState([]);
 
@@ -33,9 +35,7 @@ function FreeRePageitem() {
   return (
     <div className="form-container">
       <FreeReWriteHeader />
-      <FreeReTable headersName={["글번호", "제목", "등록일"]}>
-        {item}
-      </FreeReTable>
+      {item}
     </div>
   );
 }
