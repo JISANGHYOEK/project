@@ -1,64 +1,62 @@
 /* AskPage.css */
 
-.title-label{
-    margin-top: 100px;
-    /* margin-left: 500px; */
-    text-align: center; /* 내용을 가운데 정렬하기 위한 설정 */
-    font-size: 36px;
-    font-weight: bold;
-    color: #333; /* 텍스트 컬러 변경 */
-    /* max-width: 500px; */
-    
+.title-label {
+  margin-top: 100px;
+  /* margin-left: 500px; */
+  text-align: center; /* 내용을 가운데 정렬하기 위한 설정 */
+  font-size: 36px;
+  font-weight: bold;
+  color: #333; /* 텍스트 컬러 변경 */
+  /* max-width: 500px; */
 }
 
 .form-container {
-    margin-top: 50px;
-    margin-bottom: 100px;
-    max-width: 550px;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    margin-right:auto;
-    margin-left:auto;
-    /* max-width: 800px;
+  margin-top: 50px;
+  margin-bottom: 100px;
+  max-width: 550px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-right: auto;
+  margin-left: auto;
+  /* max-width: 800px;
     margin-left: 350px;  */
 }
 
 .form-container label {
-    display: block;
-    margin-bottom: 10px;
+  display: block;
+  margin-bottom: 10px;
 }
 
-.form-container input[type='text'],
-.form-container input[type='email'],
+.form-container input[type="text"],
+.form-container input[type="email"],
 .form-container textarea {
-    width: 100%;
-    padding: 8px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
 }
 .form-container textarea {
-    width: 100%;
-    padding: 8px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-    height: 300px;
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  height: 300px;
 }
 
-.form-container button[type='submit'] {
-
-    padding: 10px 20px;
-    background-color: orangered;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    margin-left: 450px;
+.form-container button[type="submit"] {
+  padding: 10px 20px;
+  background-color: orangered;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-left: 450px;
 }
-.form-container button[type='submit']:hover {
-    background-color: orangered;
+.form-container button[type="submit"]:hover {
+  background-color: orangered;
 }

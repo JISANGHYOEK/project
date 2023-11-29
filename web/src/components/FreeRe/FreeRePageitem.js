@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 // import axios from "axios";
 import FreeReTableColumn from "./FreeReTableColumn";
-import { Link } from "react-router-dom";
 
 import "./FreeRe.css";
 
-function FreeRePageitem() {
+function FreeRePageitem({}) {
   const [data, setData] = useState([]);
 
   const temporaryData = [
@@ -15,10 +15,10 @@ function FreeRePageitem() {
     // 추가적인 임시 데이터
   ];
 
-  
   useEffect(() => {
+    const sortedData = [...temporaryData].sort((b, a) => new Date(a.createAt) - new Date(b.createAt));
+    setData(sortedData);
     // Axios 요청 대신 임시 데이터 사용
-    setData(temporaryData);
   }, []);
 
   // useEffect(() => {
@@ -33,23 +33,25 @@ function FreeRePageitem() {
   // }, []);
 
   return (
-<div className="container">
-      <div className="header">
-        <h1 className="title">미래투자 무료추천종목</h1>
-      </div>
-      <div className="item-list">
-        {data.map((item) => (
-          <div key={item.id} className="item">
-            <div className="item-content">
-              <FreeReTableColumn>
-                <Link to={`/FreeRePage/id=${item.id}`}>{item.title}</Link>
-                <span className="item-date">{item.createAt}</span>
-              </FreeReTableColumn>
+    <div>
+    <div className="container">
+    <div className="header">
+      <h1 className="title">미래투자 무료추천종목</h1>
+    </div>
+    <div className="item-list">
+      {data.map((item) => (
+        <div key={item.id} className="item">
+          <div className="item-content">
+            <div className="item-title">
+              <Link to={`/FreeRePage/id=${item.id}`}>{item.title}</Link>
+              <span className="item-date"> {item.createAt}</span>
             </div>
           </div>
-        ))}
-      </div>
+        </div>
+      ))}
     </div>
+  </div>
+  </div>
   );
 }
 
