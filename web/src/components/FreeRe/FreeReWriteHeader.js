@@ -7,7 +7,7 @@ function FreeReWriteHeader(props) {
 
   return (
     <div className="FreeRe-header">
-      <Link to="/FreeReWritePage">
+      <Link to="/FreeRePage/FreeReWritePage">
         <button align="right" className="FreeRe-view-go-list-btn">
           게시글 작성
         </button>
