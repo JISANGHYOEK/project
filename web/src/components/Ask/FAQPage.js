@@ -2,6 +2,7 @@ import FAQTable from "./FAQTable";
 import HeaderComponent from "../Header/Header";
 import FooterComponent from "../Footer/Footer";
 import { Box } from "@mui/material";
+
 function FAQPage({ faqs }) {
   return (
     <div>
