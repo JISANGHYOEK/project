@@ -17,6 +17,8 @@ import FAQItem from "./components/Ask/FAQItem";
 import { faqs } from "./components/Ask/FAQData";
 import VipPage from "./components/Vip/VipPage";
 import FreeRePage from "./components/FreeRe/FreeRePage";
+import FreeReViewPage from "./components/FreeRe/FreeReViewPage";
+import FreeReWritePage from "./components/FreeRe/FreeReWritePage";
 
 function LandingPage() {
   return (
@@ -48,6 +50,11 @@ function App() {
         <Route path="/faq/:id" element={<FAQItem />} />
         <Route path="/VipPage" element={<VipPage />} />
         <Route path="/FreeRePage" element={<FreeRePage />} />
+        <Route path="/FreeRePage/:FreeRePageID" element={<FreeReViewPage />} />
+        <Route
+          path="/FreeRePage/FreeReWritePage"
+          element={<FreeReWritePage />}
+        />
       </Routes>
     </Router>
   );

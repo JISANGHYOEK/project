@@ -1,0 +1,26 @@
+.FreeRE-view-wrapper {
+  width: 60%;
+  margin: 0 auto;
+}
+
+.FreeRE-view-go-list-btn {
+  border: 0;
+  padding: 10px;
+  background-color: #ffd9d9;
+}
+
+.FreeRE-view-row {
+  margin: 10px 0;
+  display: flex;
+}
+
+.FreeRE-view-row > label:first-child {
+  margin: 10px 0;
+  width: 30%;
+  font-weight: bold;
+}
+
+.FreeRE-view-row > *:nth-child(2) {
+  margin: 10px 0;
+  width: 70%;
+}

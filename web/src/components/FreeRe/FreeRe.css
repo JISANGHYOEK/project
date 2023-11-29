@@ -1,15 +1,30 @@
-.form-container{
-
-    border: none; /* 테두리 없애기 */
+.FreeRe-table {
+  width: 80%;
+  margin: 0 auto;
+  text-align: center;
+  border-spacing: 0;
 }
 
-.label-title{
-    margin-top: 100px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    font-weight: 900; /* 굵게 */
-    font-size: 32px; /* 크기 조절 (예시로 24px 사용) */
+.FreeRe-table-header-column {
+  border-bottom: 1px solid #e8e8e8;
+  padding: 0;
+  font-size: 16px;
+  padding: 10px 5px;
+  font-weight: bold;
 }
 
+.FreeRe-table-row:hover {
+  background-color: #eceaea;
+  cursor: pointer;
+}
+
+.FreeRe-table-column {
+  padding: 10px 5px;
+}
+
+.form-container {
+}
+
+.form-button {
+  margin-top: 100px;
+}

@@ -1,32 +1,43 @@
-import React, {useEffect, useState} from 'react';
+import React, { useEffect, useState } from "react";
 import axios from "axios";
+import FreeReTable from "./FreeReTable";
+import FreeReTableColumn from "./FreeReTableColumn";
+import FreeReTableRow from "./FreeReTableRow";
+import FreeReWriteHeader from "./FreeReWriteHeader";
+import { Link } from "react-router-dom";
 
-function FreeRePageitem(){
-    const [boardList, setBoardList] = useState([]);
+function FreeRePageitem() {
+  const [data, setData] = useState([]);
 
-    const getBoardList = async () => {
-        const resp = await (await axios.get('//10000mr.com:8080/FreeRePage')).data; // 2) 게시글 목록 데이터에 할당  
-        setBoardList(resp.data); // 3) boardList 변수에 할당
-        console.log(boardList)
-    }
+  useEffect(() => {
+    axios
+      .get("http://10000mr.com:8080/FreeRepage")
+      .then((response) => {
+        setData(response.data);
+      })
+      .catch((error) => {
+        console.error("데이터를 가져오는 중 오류 발생:", error);
+      });
+  }, []);
 
-    useEffect(() => {
-        getBoardList(); // 1) 게시글 목록 조회 함수 호출
-    }, []);
-    
-    return(
-        <div>
-            <h1><label className='label-title'>무료 추천 종목</label></h1>
-            <div className='form-container'> 
-                <ul>
-                    {boardList.map((board) => ( // 4) map 함수로 데이터 출력
-                    <li key={board.idx}>{board.title}</li>
-                    ))}
-                </ul>
-            </div>
-        </div>
-    )
+  const item = Object.values(data).map((item) => (
+    <FreeReTableRow key={item.id}>
+      <FreeReTableColumn>{item.id}</FreeReTableColumn>
+      <FreeReTableColumn>
+        <Link to={`/FreeRePage/${item.id}`}>{item.title}</Link>
+      </FreeReTableColumn>
+      <FreeReTableColumn>{item.createAt}</FreeReTableColumn>
+    </FreeReTableRow>
+  ));
 
+  return (
+    <div className="form-container">
+      <FreeReWriteHeader />
+      <FreeReTable headersName={["글번호", "제목", "등록일"]}>
+        {item}
+      </FreeReTable>
+    </div>
+  );
 }
 
 export default FreeRePageitem;
