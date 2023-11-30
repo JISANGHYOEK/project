@@ -9,15 +9,18 @@ function FAQPage({ faqs }) {
       <HeaderComponent />
       <Box
         sx={{
-          display: "block",
+          display: "flex",
           wordBreak: "break-all",
           fontSize: "1.75em",
           fontWeight: 400,
           textAlign: "left",
           padding: "20px",
-          marginBottom: "20px",
           background: "none",
           borderBottom: "2px solid black",
+          width: "65%",
+          marginLeft: "200px",
+          marginTop: "50px",
+          marginBottom: "20px",
         }}
       >
         1대1 문의내역
