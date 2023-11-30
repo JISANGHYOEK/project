@@ -61,7 +61,7 @@ function FreeReTable({ FreeReDatas }) {
           onChange={handlePageChange}
         />
       </div>
-      {currentPage === totalPages && <Box sx={{ height: "48vh" }} />}
+      {currentPage === totalPages && <Box sx={{ height: "vh" }} />}
     </div>
   );
 }

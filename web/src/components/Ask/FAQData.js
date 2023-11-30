@@ -1,7 +1,7 @@
 export const faqs = [
   {
     id: 1,
-    question: "문의내용",
+    question: "문의내용1",
     answer: "관리자답변1 ",
   },
   {

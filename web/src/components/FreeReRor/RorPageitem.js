@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 // import axios from "axios";
 import { Rors } from "./RorData";
 import RorTable from "./RorTable";
-import "./Ror.css";
 import HeaderComponent from "../Header/Header";
 import FooterComponent from "../Footer/Footer";
 
@@ -21,7 +20,7 @@ function RorPageitem({ Ror: propRor }) {
   }, []);
 
   if (!Ror) {
-    return <div></div>;
+    return <div>Loading...</div>;
   }
 
   // useEffect(() => {

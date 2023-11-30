@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { Pagination, Box } from "@mui/material";
+
 import "./Ror.css";
 
 function RorTable({ Rors }) {
@@ -27,20 +28,12 @@ function RorTable({ Rors }) {
     <div className="form-container">
       <label className="title">미래투자 매매 수익 결산</label>
       <table className="Ror-table">
-        {" "}
-        {/* Ror-table 클래스를 적용 */}
         <tbody>
           {currentItems.map((Ror) => (
             <tr className="Ror-table-row" key={Ror.id}>
-              {" "}
-              {/* Ror-table-row 클래스를 적용 */}
               <td className="Ror-table-column">
-                {" "}
-                {/* Ror-table-column 클래스를 적용 */}
                 <div>
                   <Link to={`/RorPage/id=${Ror.id}`} className="item-title">
-                    {" "}
-                    {/* item-title 클래스를 적용 */}
                     {Ror.title}
                   </Link>
                   <span className="item-date">{Ror.createAt}</span>{" "}
@@ -58,7 +51,7 @@ function RorTable({ Rors }) {
           onChange={handlePageChange}
         />
       </div>
-      {currentPage === totalPages && <Box sx={{ height: "48vh" }} />}
+      {currentPage === totalPages && <Box sx={{ height: "vh" }} />}
     </div>
   );
 }
