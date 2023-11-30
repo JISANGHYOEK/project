@@ -1,5 +1,5 @@
 import React from "react";
-import MainHeaderComponent from "../Header/MainHeader";
+import HeaderComponent from "../Header/Header";
 import FooterComponent from "../Footer/Footer";
 import FreeRePageitem from "./FreeRePageitem";
 import FreeReTable from "./FreeReTable";
@@ -8,7 +8,7 @@ import FreeReTable from "./FreeReTable";
 function FreeRePage({ FreeReDatas }) {
   return (
     <div>
-      <MainHeaderComponent />
+      <HeaderComponent />
       <FreeRePageitem FreeReDatas={FreeReDatas} />
       <FreeReTable FreeReDatas={FreeReDatas} />
       <FooterComponent />

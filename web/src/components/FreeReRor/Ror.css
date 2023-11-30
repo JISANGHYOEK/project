@@ -1,0 +1,108 @@
+.Ror-table {
+  width: 100%;
+  border-collapse: collapse; /* 테이블 셀 간격을 없앱니다. */
+  margin-bottom: 30px;
+}
+
+.Ror-table-row {
+  transition: background-color 0.3s; /* 호버 시 부드러운 전환을 위한 트랜지션 */
+}
+
+.Ror-table-row:hover {
+  background-color: #eceaea; /* 호버 시 배경색 변경 */
+  cursor: pointer;
+}
+
+.Ror-table-column {
+  padding: 12px 8px; /* 셀 안의 여백 설정 */
+}
+
+/* 제목 스타일 */
+.item-title {
+  font-size: 20px; /* 링크 제목 폰트 크기 설정 */
+  text-decoration: none;
+}
+
+.item-date {
+  float: right;
+  color: #666; /* 날짜 색상 설정 */
+}
+
+.form-container {
+  margin-bottom: 100px;
+  max-width: 1000px;
+  border: none;
+
+  /* border 속성 제거하여 테두리 없애기 */
+}
+
+.form-button {
+  margin-top: 100px;
+}
+
+/* 헤더 스타일 */
+.header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.title {
+  font-size: 32px;
+  color: #333;
+}
+
+/* 아이템 리스트 스타일 */
+.item-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* 아이템 스타일 */
+.item {
+  display: flex;
+  align-items: center;
+  font-size: 15pt;
+  padding: 25px;
+  border-radius: 6px;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.item .item-id {
+  font-weight: bold;
+  margin-right: 10px;
+  color: #333;
+}
+
+.item .item-content {
+  display: flex;
+  flex-direction: column;
+  width: 800px;
+}
+
+.item .item-title {
+  font-size: 24px;
+  color: black;
+  text-decoration: none;
+  margin-bottom: 5px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.item .item-date {
+  color: #666;
+}
+
+a {
+  text-decoration: none; /* 링크의 밑줄을 제거합니다. */
+  color: inherit; /* 링크의 색상을 기본 상속 값으로 유지합니다. */
+}
+
+.pagination-container {
+}
+
+.MuiPagination-root {
+  display: flex;
+  justify-content: center;
+}

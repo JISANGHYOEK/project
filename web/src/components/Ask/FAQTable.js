@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { Container, Pagination, Box } from "@mui/material";
 
+import "./FAQ.css";
+
 function FAQTable({ faqs }) {
   const itemsPerPage = 7; // 페이지당 보여줄 항목 수
   const totalItems = faqs.length; // 전체 항목 수
@@ -30,7 +32,7 @@ function FAQTable({ faqs }) {
             <tr key={faq.id}>
               <td>
                 <Link to={`/faq/${faq.id}`}>
-                  <div>{faq.question}</div>
+                  <div className="faq-question">{faq.question}</div>
                 </Link>
               </td>
             </tr>
@@ -45,6 +47,6 @@ function FAQTable({ faqs }) {
       {currentPage === totalPages && <Box sx={{ height: "48vh" }} />}
     </Container>
   );
-};
+}
 
 export default FAQTable;

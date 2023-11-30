@@ -1,0 +1,21 @@
+.faq-item-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+.faq-item-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+.faq-question {
+  /* 링크 스타일 설정 */
+  text-decoration: none;
+  color: #333;
+}
+
+.faq-question:hover {
+  /* 호버 시 색상 변경 */
+  /* color: #007bff; */
+}

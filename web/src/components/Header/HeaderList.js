@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
+
 function HeaderComponent2(props) {
   return (
     <Navigation>
@@ -10,7 +11,9 @@ function HeaderComponent2(props) {
       <StyledLink to="/FreeRePage">
         <NavItem>무료 추천 종목</NavItem>
       </StyledLink>
-      <NavItem>무료 추천 종목 수익률</NavItem>
+      <StyledLink to="/RorPage">
+        <NavItem>무료 추천 종목 수익률</NavItem>
+      </StyledLink>
       <StyledLink to="/CscPage">
         <NavItem>고객 센터</NavItem>
       </StyledLink>
