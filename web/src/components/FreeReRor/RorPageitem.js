@@ -20,7 +20,7 @@ function RorPageitem({ Ror: propRor }) {
   }, []);
 
   if (!Ror) {
-    return <div>Loading...</div>;
+    return <div></div>;
   }
 
   // useEffect(() => {

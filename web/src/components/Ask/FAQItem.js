@@ -11,7 +11,7 @@ function FAQItem({ faq: propFaq }) {
   const faq = propFaq ? propFaq : faqs.find((faq) => faq.id === Number(id));
 
   if (!faq) {
-    return <div>Loading...</div>;
+    return <div></div>;
   }
 
   return (
