@@ -27,27 +27,18 @@ function FreeReTable({ FreeReDatas }) {
     <div className="form-container">
       <label className="title">미래투자 무료 추천 종목</label>
       <table className="FreeRe-table">
-        {" "}
-        {/* FreeRe-table 클래스를 적용 */}
         <tbody>
           {currentItems.map((FreeReData) => (
             <tr className="FreeRe-table-row" key={FreeReData.id}>
-              {" "}
-              {/* FreeRe-table-row 클래스를 적용 */}
               <td className="FreeRe-table-column">
-                {" "}
-                {/* FreeRe-table-column 클래스를 적용 */}
                 <div>
                   <Link
                     to={`/FreeRePage/id=${FreeReData.id}`}
                     className="item-title"
                   >
-                    {" "}
-                    {/* item-title 클래스를 적용 */}
                     {FreeReData.title}
                   </Link>
                   <span className="item-date">{FreeReData.createAt}</span>{" "}
-                  {/* item-date 클래스를 적용 */}
                 </div>
               </td>
             </tr>

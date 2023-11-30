@@ -4,23 +4,22 @@ import "./FreeReWrite.css";
 
 function FreeReWritePageitem() {
   const [title, setTitle] = useState("");
-  const [email, setEmail] = useState("");
   const [content, setContent] = useState("");
   const [stationId, setStationId] = useState("ST-4");
 
-  //   useEffect(() => {
-  //     axios
-  //       .get("http://10000mr.com:8080/FreeRePage/FreeReWrtiePage")
-  //       .then((response) => {
-  //         setCategory(response.data);
-  //       });
-  //   }, []);
+  // useEffect(() => {
+  //   axios
+  //     .get("http://10000mr.com:8080/FreeRePage/FreeReWrtiePage")
+  //     .then((response) => {
+  //       setCategory(response.data);
+  //     });
+  // }, []);
 
-  //   const categories = Object.values(category).map((item) => (
-  //     <option key={item.id} value={item.id}>
-  //       {item.displayName}
-  //     </option>
-  //   ));
+  // const categories = Object.values(category).map((item) => (
+  //   <option key={item.id} value={item.id}>
+  //     {item.displayName}
+  //   </option>
+  // ));
 
   const HandleQuestionSubmit = async () => {
     const headers = {
@@ -34,7 +33,6 @@ function FreeReWritePageitem() {
         {
           title: title,
           content: content,
-          email: email,
           stationId: stationId,
         },
         { headers: headers }
@@ -50,10 +48,6 @@ function FreeReWritePageitem() {
     <div>
       <h2 align="center">게시글 작성</h2>
       <div className="FreeRe-view-wrapper">
-        <div className="FreeRe-view-row">
-          <label>email</label>
-          <input onChange={(event) => setEmail(event.target.value)}></input>
-        </div>
         <div className="FreeRe-view-row">
           <label>제목</label>
           <input onChange={(event) => setTitle(event.target.value)}></input>

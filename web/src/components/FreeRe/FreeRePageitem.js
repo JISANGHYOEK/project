@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
-// import axios from "axios";
+import axios from "axios";
 import { FreeReDatas } from "./FreeReData";
 import FreeReTable from "./FreeReTable";
 import "./FreeRe.css";
@@ -16,26 +16,22 @@ function FreeRePageitem({ FreeReData: propFreeReData }) {
     : FreeReDatas.find((item) => item.id === Number(id));
 
   useEffect(() => {
-    const sortedData = FreeReDatas.slice().sort((a, b) => {
-      return new Date(b.createAt) - new Date(a.createAt);
-    });
-    setData(sortedData);
+    axios
+      .get("http://10000mr.com:8080/FreeRepage")
+      .then((response) => {
+        const sortedData = response.data.slice().sort((a, b) => {
+          return a.id - b.id; // id의 오름차순 정렬
+        });
+        setData(sortedData);
+      })
+      .catch((error) => {
+        console.error("데이터를 가져오는 중 오류 발생:", error);
+      });
   }, []);
 
   if (!FreeReData) {
     return <div></div>;
   }
-
-  // useEffect(() => {
-  //   axios
-  //     .get("http://10000mr.com:8080/FreeRepage")
-  //     .then((response) => {
-  //       setData(response.data);
-  //     })
-  //     .catch((error) => {
-  //       console.error("데이터를 가져오는 중 오류 발생:", error);
-  //     });
-  // }, []);
 
   return (
     <div>

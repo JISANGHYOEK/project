@@ -34,10 +34,6 @@ function FreeReViewPage() {
       <h2 align="center">게시글 상세정보</h2>
       <div className="FreeRe-view-wrapper">
         <div className="FreeRe-view-row">
-          <label>게시글 번호</label>
-          <label>{question.id}</label>
-        </div>
-        <div className="FreeRe-view-row">
           <label>제목</label>
           <label>{question.title}</label>
         </div>
