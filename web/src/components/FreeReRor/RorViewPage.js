@@ -34,10 +34,6 @@ function RorViewPage() {
       <h2 align="center">게시글 상세정보</h2>
       <div className="Ror-view-wrapper">
         <div className="Ror-view-row">
-          <label>게시글 번호</label>
-          <label>{question.id}</label>
-        </div>
-        <div className="Ror-view-row">
           <label>제목</label>
           <label>{question.title}</label>
         </div>
