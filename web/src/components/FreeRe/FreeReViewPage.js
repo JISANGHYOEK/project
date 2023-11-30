@@ -33,19 +33,19 @@ function FreeReViewPage() {
       <HeaderComponent />
       <h2 align="center">게시글 상세정보</h2>
       <div className="FreeRe-view-wrapper">
-        <div className="FreeRE-view-row">
+        <div className="FreeRe-view-row">
           <label>게시글 번호</label>
           <label>{question.id}</label>
         </div>
-        <div className="FreeRE-view-row">
+        <div className="FreeRe-view-row">
           <label>제목</label>
           <label>{question.title}</label>
         </div>
-        <div className="FreeRE-view-row">
+        <div className="FreeRe-view-row">
           <label>작성일</label>
           <label>{question.createDate}</label>
         </div>
-        <div className="FreeRE-view-row">
+        <div className="FreeRe-view-row">
           <label>내용</label>
           <div>{question.content}</div>
         </div>
