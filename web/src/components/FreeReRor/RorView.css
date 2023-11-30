@@ -1,26 +1,26 @@
-.FreeRe-view-wrapper {
+.Ror-view-wrapper {
   width: 60%;
   margin: 0 auto;
 }
 
-.FreeRe-view-go-list-btn {
+.Ror-view-go-list-btn {
   border: 0;
   padding: 10px;
   background-color: #ffd9d9;
 }
 
-.FreeRe-view-row {
+.Ror-view-row {
   margin: 10px 0;
   display: flex;
 }
 
-.FreeRe-view-row > label:first-child {
+.Ror-view-row > label:first-child {
   margin: 10px 0;
   width: 30%;
   font-weight: bold;
 }
 
-.FreeRe-view-row > *:nth-child(2) {
+.Ror-view-row > *:nth-child(2) {
   margin: 10px 0;
   width: 70%;
 }

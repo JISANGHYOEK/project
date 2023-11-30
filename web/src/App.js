@@ -23,6 +23,11 @@ import FreeReViewPage from "./components/FreeRe/FreeReViewPage";
 import FreeReWritePage from "./components/FreeRe/FreeReWritePage";
 import { FreeReDatas } from "./components/FreeRe/FreeReData";
 
+import RorPage from "./components/FreeReRor/RorPage";
+import RorViewPage from "./components/FreeReRor/RorViewPage";
+import RorWritePage from "./components/FreeReRor/RorWritePage";
+import { Rors } from "./components/FreeReRor/RorData";
+
 function LandingPage() {
   return (
     <div className="App">
@@ -61,6 +66,10 @@ function App() {
           path="/FreeRePage/FreeReWritePage"
           element={<FreeReWritePage />}
         />
+
+        <Route path="/RorPage" element={<RorPage Rors={Rors} />} />
+        <Route path="/RorPage/:RorPageID" element={<RorViewPage />} />
+        <Route path="/RorPage/RorWritePage" element={<RorWritePage />} />
       </Routes>
     </Router>
   );

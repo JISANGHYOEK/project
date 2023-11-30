@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { Pagination, Box } from "@mui/material";
-import "./FreeRe.css";
 
-function FreeReTable({ FreeReDatas }) {
+import "./Ror.css";
+
+function RorTable({ Rors }) {
   const itemsPerPage = 7; // 페이지당 보여줄 항목 수
-  const totalItems = FreeReDatas.length; // 전체 항목 수
+  const totalItems = Rors.length; // 전체 항목 수
   const totalPages = Math.ceil(totalItems / itemsPerPage); // 전체 페이지 수
 
   const [currentPage, setCurrentPage] = useState(1); // 현재 페이지 번호
@@ -18,27 +19,25 @@ function FreeReTable({ FreeReDatas }) {
   const getCurrentPageItems = () => {
     const startIndex = (currentPage - 1) * itemsPerPage;
     const endIndex = startIndex + itemsPerPage;
-    return FreeReDatas.slice(startIndex, endIndex);
+    return Rors.slice(startIndex, endIndex);
   };
 
   const currentItems = getCurrentPageItems(); // 현재 페이지에 해당하는 항목들
 
   return (
     <div className="form-container">
-      <label className="title">미래투자 무료 추천 종목</label>
-      <table className="FreeRe-table">
+      <label className="title">미래투자 매매 수익 결산</label>
+      <table className="Ror-table">
         <tbody>
-          {currentItems.map((FreeReData) => (
-            <tr className="FreeRe-table-row" key={FreeReData.id}>
-              <td className="FreeRe-table-column">
+          {currentItems.map((Ror) => (
+            <tr className="Ror-table-row" key={Ror.id}>
+              <td className="Ror-table-column">
                 <div>
-                  <Link
-                    to={`/FreeRePage/id=${FreeReData.id}`}
-                    className="item-title"
-                  >
-                    {FreeReData.title}
+                  <Link to={`/RorPage/id=${Ror.id}`} className="item-title">
+                    {Ror.title}
                   </Link>
-                  <span className="item-date">{FreeReData.createAt}</span>{" "}
+                  <span className="item-date">{Ror.createAt}</span>{" "}
+                  {/* item-date 클래스를 적용 */}
                 </div>
               </td>
             </tr>
@@ -57,4 +56,4 @@ function FreeReTable({ FreeReDatas }) {
   );
 }
 
-export default FreeReTable;
+export default RorTable;
