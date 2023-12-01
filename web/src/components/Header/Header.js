@@ -2,16 +2,29 @@ import * as React from "react";
 import styled from "styled-components";
 import HeaderComponent2 from "./HeaderList";
 import { Link } from "react-router-dom";
+import useStore from "../../store";
 
 function HeaderComponent(props) {
+  const { isLogin, logOut } = useStore();
+
   return (
     <>
       <Div2>
         <Div3>
-          <Link to="/login">로그인</Link>
+          {isLogin ? (
+            <Link to="/" onClick={logOut}>
+              로그아웃
+            </Link>
+          ) : (
+            <Link to="/login">로그인</Link>
+          )}
         </Div3>
         <Div4>
-          <Link to="/TermsAgree">회원가입</Link>
+          {isLogin ? (
+            <Link to="/mypage">정보수정</Link>
+          ) : (
+            <Link to="/TermsAgree">회원가입</Link>
+          )}
         </Div4>
       </Div2>
       <Divheader>

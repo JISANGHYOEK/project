@@ -2,12 +2,14 @@ import React, { useState } from "react";
 import "./AskPage.css";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import useStore from "../../store";
 
 function AskPageitem() {
   const [title, setTitle] = useState("");
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [content, setContent] = useState("");
+  const { isLogin } = useStore();
 
   const navigate = useNavigate();
 
@@ -28,11 +30,19 @@ function AskPageitem() {
     // 폼이 제출되었을 때 할 작업들을 처리하는 함수
     // 여기에 제출된 데이터를 어딘가에 저장하거나 다른 동작을 수행할 수 있습니다.
     e.preventDefault();
-    if (!title) alert("제목을 입력해주세요.");
-    else if (!name) alert("이름을 입력해주세요.");
-    else if (!email) alert("이메일을 입력해주세요.");
-    else if (!content) alert("문의내용을 입력해주세요.");
-
+    if (!isLogin) {
+      alert("로그인 먼저해주세요");
+    } else if (!title) {
+      alert("제목을 입력해주세요.");
+    } else if (!name) {
+      alert("이름을 입력해주세요.");
+    } else if (!email) {
+      alert("이메일을 입력해주세요.");
+    } else if (!content) {
+      alert("문의내용을 입력해주세요.");
+    } else {
+      // 모든 필드가 유효하고 사용자가 로그인한 상태라면, 폼 제출을 처리합니다.
+    }
     axios
       .post("http://10000mr.com:8080/api/AskPage", data, {
         withCredentials: true,
