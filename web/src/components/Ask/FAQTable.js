@@ -35,7 +35,7 @@ function FAQTable({ faqs }) {
       <hr />
       {currentItems.map((faq) => (
         <div key={faq.id} onClick={() => handleFAQClick(faq)}>
-          <div className="faq-item-title">{faq.question}</div>
+          <div className="faq-item-title">{faq.title}</div>
           {selectedFAQ && selectedFAQ.id === faq.id && (
             <div className="faq-detail">
               <p>답변: {selectedFAQ.answer}</p>
