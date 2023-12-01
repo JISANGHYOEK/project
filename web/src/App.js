@@ -16,7 +16,6 @@ import AskPage from "./components/Ask/AskPage";
 
 import FAQPage from "./components/Ask/FAQPage";
 import FAQItem from "./components/Ask/FAQItem";
-import { faqs } from "./components/Ask/FAQData";
 
 import FreeRePage from "./components/FreeRe/FreeRePage";
 import FreeReViewPage from "./components/FreeRe/FreeReViewPage";
@@ -54,7 +53,7 @@ function App() {
         <Route path="/CscPage" element={<CscPage />} />
         <Route path="/MainCscPage" element={<MainCscPage />} />
         <Route path="/AskPage" element={<AskPage />} />
-        <Route path="/faq" element={<FAQPage faqs={faqs} />} />
+        <Route path="/faq" element={<FAQPage />} />
         <Route path="/faq/:id" element={<FAQItem />} />
         <Route path="/VipPage" element={<VipPage />} />
         <Route
