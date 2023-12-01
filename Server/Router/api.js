@@ -132,11 +132,11 @@ router.post("/logout", (req, res) => {
 module.exports = router;
 
 // 글 작성
-app.route("/AskPage", (req, res) => {
+router.post("/AskPage", (req, res) => {
   if (req.session.loggedin) {
     let newPost = {
       title: req.body.title,
-      Username: req.body.Username,
+      Username: req.body.name,
       email: req.body.email,
       content: req.body.content,
       Create_At: new Date(),
@@ -159,7 +159,7 @@ app.put("/AskPage/:id", (req, res) => {
   if (req.session.loggedin) {
     let newPost = {
       title: req.body.title,
-      username: req.body.username,
+      username: req.body.Usernamesername,
       email: req.body.email,
       content: req.body.content,
     };
