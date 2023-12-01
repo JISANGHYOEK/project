@@ -1,11 +1,15 @@
 import React, { useState } from "react";
 import "./AskPage.css";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 function AskPageitem() {
   const [title, setTitle] = useState("");
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
-  const [ask, setAsk] = useState("");
+  const [content, setContent] = useState("");
+
+  const navigate = useNavigate();
 
   const handleTitleChange = (e) => {
     setTitle(e.target.value);
@@ -16,8 +20,8 @@ function AskPageitem() {
   const handleEmailChange = (e) => {
     setEmail(e.target.value);
   };
-  const handleAskChange = (e) => {
-    setAsk(e.target.value);
+  const handleContentChange = (e) => {
+    setContent(e.target.value);
   };
 
   const handleSubmit = (e) => {
@@ -27,11 +31,35 @@ function AskPageitem() {
     if (!title) alert("제목을 입력해주세요.");
     else if (!name) alert("이름을 입력해주세요.");
     else if (!email) alert("이메일을 입력해주세요.");
-    else if (!ask) alert("문의내용을 입력해주세요.");
+    else if (!content) alert("문의내용을 입력해주세요.");
+
+    axios
+      .post("http://10000mr.com:8080/api/AskPage", data, {
+        withCredentials: true,
+      })
+      .then((response) => {
+        console.log(response);
+        navigate("/faq");
+        alert("문의가 접수되었습니다.");
+        // 문의제출 성공 시 처리 로직을 작성하세요.
+        // 예: 로그인 상태를 관리하는 상태를 변경하거나, 메인 페이지로 이동 등
+      })
+      .catch((error) => {
+        console.error(error);
+        // 로그인 실패 시 처리 로직을 작성하세요.
+        // 예: 에러 메시지를 표시하거나, 입력 필드를 초기화 등
+      });
   };
 
   // 서버로 보낼 데이터
-  const data = { AskTitle: title, AskName: name, AskEmail: email, AskAsk: ask };
+  const data = {
+    title: title,
+    Username: name,
+    email: email,
+    content: content,
+  };
+
+  // axios를 사용하여 서버에 로그인 요청을 보냅니다.
 
   return (
     <div>
@@ -72,11 +100,11 @@ function AskPageitem() {
           <label>
             문의 내용:
             <textarea
-              name="ask"
+              name="content"
+              value={content}
               rows="4"
               cols="50"
-              value={ask}
-              onChange={handleAskChange}
+              onChange={handleContentChange}
             />
           </label>
           <br />

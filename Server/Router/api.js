@@ -139,10 +139,10 @@ app.post("/AskPage", (req, res) => {
   if (req.session.loggedin) {
     let newPost = {
       title: req.body.title,
-      username: req.body.username,
+      Username: req.body.username,
       email: req.body.email,
       content: req.body.content,
-      create_at: new Date(),
+      Create_At: new Date(),
     };
     let sql = "INSERT INTO FAQ SET ?";
     db.query(sql, newPost, (err, result) => {
