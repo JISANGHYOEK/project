@@ -24,14 +24,6 @@ function AskPageitem() {
     setContent(e.target.value);
   };
 
-  // 서버로 보낼 데이터
-  const data = {
-    title: title,
-    Username: name,
-    email: email,
-    content: content,
-  };
-
   const handleSubmit = (e) => {
     // 폼이 제출되었을 때 할 작업들을 처리하는 함수
     // 여기에 제출된 데이터를 어딘가에 저장하거나 다른 동작을 수행할 수 있습니다.
@@ -57,6 +49,14 @@ function AskPageitem() {
         // 로그인 실패 시 처리 로직을 작성하세요.
         // 예: 에러 메시지를 표시하거나, 입력 필드를 초기화 등
       });
+  };
+
+  // 서버로 보낼 데이터
+  const data = {
+    title: title,
+    username: name,
+    email: email,
+    content: content,
   };
 
   // axios를 사용하여 서버에 로그인 요청을 보냅니다.
