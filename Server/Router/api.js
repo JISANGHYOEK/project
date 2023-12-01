@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
-const { con, app } = require("../db");
 const bcrypt = require("bcrypt");
+const { con, app } = require("../db");
 
 router.post("/signupPage", (req, res) => {
   const { Username, UserID, Password, confirmPassword, Email, PhoneNumber } =
@@ -95,7 +95,7 @@ router.post("/login", (req, res) => {
       }
 
       // 세션 생성
-      console.log(req.session);
+      // console.log(req.session);
       req.session.userID = UserID;
 
       // 세션 저장
@@ -129,65 +129,87 @@ router.post("/logout", (req, res) => {
   }
 });
 
-module.exports = router;
+// 글 목록
+router.get("/AskPage", (req, res) => {
+  if (!req.session.userID) {
+    res.status(401).json({ message: "로그인 후 이용 가능합니다." });
+    return;
+  }
+
+  let sql = "SELECT * FROM FAQ";
+
+  con.query(sql, (err, result) => {
+    if (err) {
+      throw err;
+    }
+    res.status(200).json(result);
+  });
+});
 
 // 글 작성
 router.post("/AskPage", (req, res) => {
-  if (req.session.userID) {
-    let newPost = {
-      title: req.body.title,
-      Username: req.body.name,
-      email: req.body.email,
-      content: req.body.content,
-      created_at: new Date(),
-    };
-    let sql = "INSERT INTO FAQ SET ?";
-    con.query(sql, newPost, (err, result) => {
-      if (err) {
-        throw err;
-      }
-      console.log(result);
-      res.send("글 작성 완료.");
-    });
-  } else {
-    res.send("로그인 후 작성 가능합니다.");
+  if (!req.session.userID) {
+    res.status(401).json({ message: "로그인 후 이용 가능합니다." });
+    return;
   }
+
+  let newPost = {
+    title: req.body.title,
+    username: req.body.username,
+    email: req.body.email,
+    content: req.body.content,
+    created_At: new Date(),
+  };
+
+  let sql = "INSERT INTO FAQ SET ?";
+
+  con.query(sql, newPost, (err, result) => {
+    if (err) {
+      throw err;
+    }
+    res.status(200).json(result);
+  });
 });
 
 // 글 수정
-router.get("/AskPage/:id", (req, res) => {
-  if (req.session.userID) {
-    let newPost = {
-      title: req.body.title,
-      username: req.body.Usernamesername,
-      email: req.body.email,
-      content: req.body.content,
-    };
-    let sql = "UPDATE FAQ SET ? WHERE id = ?";
-    db.query(sql, [newPost, req.params.id], (err, result) => {
-      if (err) {
-        throw err;
-      }
-      console.log(result);
-      res.send("수정이 완료되었습니다.");
-    });
-  } else {
-    res.send("로그인 후 이용 가능합니다.");
+router.put("/AskPage/:id", (req, res) => {
+  if (!req.session.userID) {
+    res.status(401).json({ message: "로그인 후 이용 가능합니다." });
+    return;
   }
+
+  let newPost = {
+    title: req.body.title,
+    username: req.body.username,
+    email: req.body.email,
+    content: req.body.content,
+  };
+
+  let sql = "UPDATE FAQ SET ? WHERE id = ?";
+
+  con.query(sql, [newPost, req.params.id], (err, result) => {
+    if (err) {
+      throw err;
+    }
+    res.status(200).json(result);
+  });
 });
 
 // 글 삭제
-router.delete("/deletepost/:id", (req, res) => {
-  if (req.session.userID) {
-    let sql = "DELETE FROM posts WHERE id = ?";
-    db.query(sql, [req.params.id], (err, result) => {
-      if (err) {
-        throw err;
-      }
-      console.log(result);
-      res.send("글이 삭제되었습니다.");
-    });
-  } else {
-    res.send("로그인 후 이용 가능합니다.");
+router.delete("/AskPage/:id", (req, res) => {
+  if (!req.session.userID) {
+    res.status(401).json({ message: "로그인 후 이용 가능합니다." });
+    return;
   }
+
+  let sql = "DELETE FROM FAQ WHERE id = ?";
+
+  con.query(sql, [req.params.id], (err, result) => {
+    if (err) {
+      throw err;
+    }
+    res.status(200).json(result);
+  });
 });
+
+module.exports = router;
