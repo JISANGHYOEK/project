@@ -132,8 +132,8 @@ router.post("/logout", (req, res) => {
 module.exports = router;
 
 // 글 작성
-app.post("/AskPage", (req, res) => {
-  if (req.session.loggedin) {
+router.post("/AskPage", (req, res) => {
+  if (req.session.userID) {
     let newPost = {
       title: req.body.title,
       Username: req.body.name,
