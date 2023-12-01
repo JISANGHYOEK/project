@@ -3,9 +3,6 @@ const router = express.Router();
 const { con, app } = require("../db");
 const bcrypt = require("bcrypt");
 
-app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
-
 router.post("/signupPage", (req, res) => {
   const { Username, UserID, Password, confirmPassword, Email, PhoneNumber } =
     req.body;
@@ -135,11 +132,11 @@ router.post("/logout", (req, res) => {
 module.exports = router;
 
 // 글 작성
-app.post("/AskPage", (req, res) => {
+app.route("/AskPage", (req, res) => {
   if (req.session.loggedin) {
     let newPost = {
       title: req.body.title,
-      Username: req.body.username,
+      Username: req.body.Username,
       email: req.body.email,
       content: req.body.content,
       Create_At: new Date(),
