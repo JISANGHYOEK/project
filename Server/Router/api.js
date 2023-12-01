@@ -3,9 +3,6 @@ const router = express.Router();
 const { con, app } = require("../db");
 const bcrypt = require("bcrypt");
 
-app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
-
 router.post("/signupPage", (req, res) => {
   const { Username, UserID, Password, confirmPassword, Email, PhoneNumber } =
     req.body;
@@ -135,17 +132,17 @@ router.post("/logout", (req, res) => {
 module.exports = router;
 
 // 글 작성
-app.post("/AskPage", (req, res) => {
-  if (req.session.loggedin) {
+router.post("/AskPage", (req, res) => {
+  if (req.session.userID) {
     let newPost = {
       title: req.body.title,
       username: req.body.username,
       email: req.body.email,
       content: req.body.content,
-      create_at: new Date(),
+      created_at: new Date(),
     };
     let sql = "INSERT INTO FAQ SET ?";
-    db.query(sql, newPost, (err, result) => {
+    con.query(sql, newPost, (err, result) => {
       if (err) {
         throw err;
       }
@@ -158,8 +155,8 @@ app.post("/AskPage", (req, res) => {
 });
 
 // 글 수정
-app.put("/AskPage/:id", (req, res) => {
-  if (req.session.loggedin) {
+router.get("/AskPage/:id", (req, res) => {
+  if (req.session.userID) {
     let newPost = {
       title: req.body.title,
       username: req.body.username,
@@ -180,8 +177,8 @@ app.put("/AskPage/:id", (req, res) => {
 });
 
 // 글 삭제
-app.delete("/deletepost/:id", (req, res) => {
-  if (req.session.loggedin) {
+router.delete("/deletepost/:id", (req, res) => {
+  if (req.session.userID) {
     let sql = "DELETE FROM posts WHERE id = ?";
     db.query(sql, [req.params.id], (err, result) => {
       if (err) {

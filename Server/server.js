@@ -7,7 +7,7 @@ const cors = require("cors");
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(
   cors({
-    origin: 'http://10000mr.com',
+    origin: "http://10000mr.com",
     credentials: true,
   })
 );
