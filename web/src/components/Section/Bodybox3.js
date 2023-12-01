@@ -27,7 +27,12 @@ function Bodybox3() {
         padding={0.5}
       >
         <StyledLink href="./AskPage" target="_blank" rel="noopener noreferrer">
-          문의하기
+          <StyledImage
+            src="/Ask.png"
+            alt="KakaoTalk"
+            width="230"
+            height="223"
+          />
         </StyledLink>
       </StyledBox>
     </div>
@@ -41,10 +46,16 @@ const StyledBox = styled(Box)`
   /* Your additional styles */
 `;
 
-
 const StyledLink = styled.a`
   font: 600 20px/123% Inter, sans-serif;
   text-decoration: none;
   color: inherit;
 `;
+
+const StyledImage = styled.img`
+  width: 100%;
+  height: 100%;
+  border-radius: 5px; /* 설정할 테두리 반경 값 */
+`;
+
 export default Bodybox3;

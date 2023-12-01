@@ -132,14 +132,14 @@ router.post("/logout", (req, res) => {
 module.exports = router;
 
 // 글 작성
-router.post("/AskPage", (req, res) => {
-  if (req.session.userID) {
+app.post("/AskPage", (req, res) => {
+  if (req.session.loggedin) {
     let newPost = {
       title: req.body.title,
-      username: req.body.username,
+      Username: req.body.name,
       email: req.body.email,
       content: req.body.content,
-      created_at: new Date(),
+      create_at: new Date(),
     };
     let sql = "INSERT INTO FAQ SET ?";
     con.query(sql, newPost, (err, result) => {
@@ -159,7 +159,7 @@ router.get("/AskPage/:id", (req, res) => {
   if (req.session.userID) {
     let newPost = {
       title: req.body.title,
-      username: req.body.username,
+      username: req.body.Usernamesername,
       email: req.body.email,
       content: req.body.content,
     };

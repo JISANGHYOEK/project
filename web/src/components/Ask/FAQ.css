@@ -1,0 +1,55 @@
+/* FAQ.css */
+
+/* 전체 FAQ 컨테이너 스타일 */
+.faq-container {
+  margin-top: 50px;
+  margin-bottom: 50px;
+  width: 800px;
+  margin-left: 550px;
+}
+
+/* 타이틀 스타일 */
+.title {
+  font-size: 32px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* 구분선 스타일 */
+hr {
+  border: none;
+  border-top: 1px solid #ccc;
+  margin-bottom: 20px;
+}
+
+/* 각 FAQ 아이템 스타일 */
+.faq-item-title {
+  font-size: 18px;
+  color: #444;
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+/* FAQ 아이템 호버 시 스타일 */
+.faq-item-title:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* FAQ 세부 내용 스타일 */
+.faq-detail {
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+/* 페이지네이션 스타일 */
+.pagination-style {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}

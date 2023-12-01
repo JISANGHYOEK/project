@@ -11,14 +11,22 @@ import TermsPage from "./components/Footer/TermsPage";
 import PersonalPage from "./components/Footer/PersonalPage";
 import CscPage from "./components/Csc/CscPage";
 import MainCscPage from "./components/Csc/MainCscPage";
+import VipPage from "./components/Vip/VipPage";
 import AskPage from "./components/Ask/AskPage";
+
 import FAQPage from "./components/Ask/FAQPage";
 import FAQItem from "./components/Ask/FAQItem";
 import { faqs } from "./components/Ask/FAQData";
-import VipPage from "./components/Vip/VipPage";
+
 import FreeRePage from "./components/FreeRe/FreeRePage";
 import FreeReViewPage from "./components/FreeRe/FreeReViewPage";
 import FreeReWritePage from "./components/FreeRe/FreeReWritePage";
+import { FreeReDatas } from "./components/FreeRe/FreeReData";
+
+import RorPage from "./components/FreeReRor/RorPage";
+import RorViewPage from "./components/FreeReRor/RorViewPage";
+import RorWritePage from "./components/FreeReRor/RorWritePage";
+import { Rors } from "./components/FreeReRor/RorData";
 
 function LandingPage() {
   return (
@@ -49,9 +57,19 @@ function App() {
         <Route path="/faq" element={<FAQPage faqs={faqs} />} />
         <Route path="/faq/:id" element={<FAQItem />} />
         <Route path="/VipPage" element={<VipPage />} />
-        <Route path="/FreeRePage" element={<FreeRePage />} />
+        <Route
+          path="/FreeRePage"
+          element={<FreeRePage FreeReDatas={FreeReDatas} />}
+        />
         <Route path="/FreeRePage/:FreeRePageID" element={<FreeReViewPage />} />
-        <Route path="/FreeRePage/FreeReWritePage" element={<FreeReWritePage />}/>
+        <Route
+          path="/FreeRePage/FreeReWritePage"
+          element={<FreeReWritePage />}
+        />
+
+        <Route path="/RorPage" element={<RorPage Rors={Rors} />} />
+        <Route path="/RorPage/:RorPageID" element={<RorViewPage />} />
+        <Route path="/RorPage/RorWritePage" element={<RorWritePage />} />
       </Routes>
     </Router>
   );

@@ -1,19 +1,19 @@
-.FreeRe-table {
+.Ror-table {
   width: 100%;
   border-collapse: collapse; /* 테이블 셀 간격을 없앱니다. */
   margin-bottom: 30px;
 }
 
-.FreeRe-table-row {
+.Ror-table-row {
   transition: background-color 0.3s; /* 호버 시 부드러운 전환을 위한 트랜지션 */
 }
 
-.FreeRe-table-row:hover {
+.Ror-table-row:hover {
   background-color: #eceaea; /* 호버 시 배경색 변경 */
   cursor: pointer;
 }
 
-.FreeRe-table-column {
+.Ror-table-column {
   padding: 12px 8px; /* 셀 안의 여백 설정 */
 }
 
