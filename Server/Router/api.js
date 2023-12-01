@@ -139,7 +139,7 @@ router.post("/AskPage", (req, res) => {
       Username: req.body.name,
       email: req.body.email,
       content: req.body.content,
-      create_at: new Date(),
+      created_at: new Date(),
     };
     let sql = "INSERT INTO FAQ SET ?";
     con.query(sql, newPost, (err, result) => {
