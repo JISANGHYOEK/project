@@ -4,9 +4,11 @@ import FAQTable from "./FAQTable";
 import HeaderComponent from "../Header/Header";
 import FooterComponent from "../Footer/Footer";
 import FAQItem from "./FAQItem";
+import { adminStore } from "../../store";
 
 function FAQPage() {
   const [data, setData] = useState([]);
+  const { setAdmin } = adminStore();
 
   useEffect(() => {
     axios
@@ -16,6 +18,18 @@ function FAQPage() {
       })
       .catch((error) => {
         console.error(error);
+      });
+  }, []);
+
+  useEffect(() => {
+    axios
+      .get("/api/isAdmin", { withCredentials: true })
+      .then((response) => {
+        setAdmin(true);
+      })
+      .catch((error) => {
+        console.error(error);
+        setAdmin(false);
       });
   }, []);
 

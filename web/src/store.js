@@ -1,13 +1,11 @@
 import { create } from "zustand";
 import axios from "axios";
 
-const useStore = create((set) => ({
+export const useStore = create((set) => ({
   isLogin: false,
   logIn: async (data) => {
     try {
-      const response = await axios.post("/api/login", data, {
-        withCredentials: true,
-      });
+      const response = await axios.post("/api/login", data, { withCredentials: true });
       if (response.status === 200) {
         set({ isLogin: true });
       }
@@ -17,7 +15,7 @@ const useStore = create((set) => ({
   },
   logOut: async () => {
     try {
-      const response = await axios.post("/api/logout");
+      const response = await axios.post("/api/logout", { withCredentials: true });
       if (response.status === 200) {
         set({ isLogin: false });
       }
@@ -27,4 +25,7 @@ const useStore = create((set) => ({
   },
 }));
 
-export default useStore;
+export const adminStore = create((set) => ({
+  isAdmin: false,
+  setAdmin: (state) => set({isAdmin: state})
+}))

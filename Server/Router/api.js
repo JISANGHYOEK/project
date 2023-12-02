@@ -129,6 +129,28 @@ router.post("/logout", (req, res) => {
   }
 });
 
+router.get("/isAdmin", (req, res) => {
+  if (!req.session.userID) {
+    res.status(401).json({ message: "사용자 확인에 실패했습니다." });
+    return;
+  }
+
+  const sql = "SELECT * FROM Users WHERE UserID = ?";
+  con.query(sql, [req.session.userID], (err, result) => {
+    if (err) {
+      throw err;
+    }
+    
+    if (!result[0].Admin) {
+      res.status(401).json({ message: "사용자 확인에 실패했습니다." });
+      return;
+    }
+
+    res.status(200).json({ message: "사용자 확인에 성공했습니다." });
+  });
+
+})
+
 // 글 목록
 router.get("/AskPage", (req, res) => {
   if (!req.session.userID) {

@@ -2,7 +2,7 @@ import * as React from "react";
 import styled from "styled-components";
 import HeaderComponent2 from "./HeaderList";
 import { Link } from "react-router-dom";
-import useStore from "../../store";
+import { useStore } from "../../store";
 
 function HeaderComponent(props) {
   const { isLogin, logOut } = useStore();

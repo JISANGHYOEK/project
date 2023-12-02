@@ -3,7 +3,7 @@ import axios from "axios";
 import styled from "styled-components";
 import { Link, useNavigate } from "react-router-dom";
 import "./LoginPage.css";
-import useStore from "../../store";
+import { useStore } from "../../store";
 
 function LoginPageitem() {
   const navigate = useNavigate();

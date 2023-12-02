@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./AskPage.css";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import useStore from "../../store";
+import { useStore } from "../../store";
 
 function AskPageitem() {
   const [title, setTitle] = useState("");

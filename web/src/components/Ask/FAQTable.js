@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import { Box, Pagination } from "@mui/material";
+import { adminStore } from "../../store";
 import "./FAQ.css";
 
 function FAQTable({ faqs }) {
@@ -11,6 +12,7 @@ function FAQTable({ faqs }) {
 
   const [currentPage, setCurrentPage] = useState(1);
   const [selectedFAQ, setSelectedFAQ] = useState(null);
+  const { isAdmin } = adminStore();
 
   const handlePageChange = (event, pageNumber) => {
     setCurrentPage(pageNumber);
@@ -41,6 +43,9 @@ function FAQTable({ faqs }) {
               <p>답변: {selectedFAQ.answer}</p>
             </div>
           )}
+          {
+            isAdmin ? <div>관리자 입니다.</div> : <div>관리자가 아닙니다.</div>
+          }
         </div>
       ))}
       <Pagination
