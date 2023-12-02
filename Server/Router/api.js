@@ -239,7 +239,7 @@ router.post("/AdminAskPage/:id", (req, res) => {
     res.status(401).json({ message: "로그인 후 이용 가능합니다." });
     return;
   }
-  
+
   let sql = "UPDATE FAQ SET answer = ? WHERE id = ?";
 
   con.query(sql, [req.body.answer, req.params.id], (err, result) => {
@@ -261,5 +261,79 @@ router.post("/AdminAskPage/:id", (req, res) => {
 //     res.status(200).json(result);
 //   });
 // });
+
+//아이디 찾기
+router.post("/findId", function (req, res, next) {
+  var Email = req.body.email;
+  var PhoneNumber = req.body.phone;
+
+  con.query(
+    "SELECT UserID FROM Users WHERE Email = ? AND PhoneNumber = ?",
+    [Email, PhoneNumber],
+    function (error, results, fields) {
+      if (error) {
+        res.status(500).send("다시 시도해주세요."); // fetching 오류
+      } else {
+        if (results.length > 0) {
+          res.json({
+            id: results[0].UserID,
+          });
+        } else {
+          res.status(400).send("이메일 또는 전화번호가 잘못되었습니다.");
+        }
+      }
+    }
+  );
+});
+
+// 비밀번호 재설정 페이지로 이동
+router.post("/resetPassword", function (req, res, next) {
+  var UserID = req.body.id;
+  var PhoneNumber = req.body.phone;
+
+  con.query(
+    "SELECT Email FROM Users WHERE UserID = ? AND PhoneNumber = ?",
+    [UserID, PhoneNumber],
+    function (error, results, fields) {
+      if (error) {
+        res.status(500).send("다시 시도해 주세요.");
+      } else {
+        if (results.length > 0) {
+          // 아이디와 전화번호가 일치하는 사용자가 있는 경우 비밀번호 재설정 페이지로 이동
+          //res.redirect("/changePassword");
+          res.json({
+            email: results[0].Email,
+          });
+        } else {
+          res.status(400).send("잘못된 아이디 또는 전화번호입니다.");
+        }
+      }
+    }
+  );
+});
+
+// 비밀번호 재설정
+router.post("/changePassword", function (req, res, next) {
+  var UserID = req.body.id;
+  var newPassword = req.body.newPassword;
+
+  bcrypt.hash(newPassword, 10, function (err, hash) {
+    if (err) {
+      res.status(500).send("비밀번호 해싱 중 오류 발생");
+    } else {
+      con.query(
+        "UPDATE Users SET Password = ? WHERE UserID = ?",
+        [hash, UserID],
+        function (error, results, fields) {
+          if (error) {
+            res.status(500).send("비밀번호 초기화 중 오류 발생.");
+          } else {
+            res.send("성공적으로 변경되었습니다.");
+          }
+        }
+      );
+    }
+  });
+});
 
 module.exports = router;

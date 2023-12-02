@@ -1,7 +1,7 @@
 // FAQTable.js
 
 import React, { useState } from "react";
-import { Box, Pagination, Button } from "@mui/material";
+import { Box, Pagination } from "@mui/material";
 import { adminStore } from "../../store";
 import "./FAQ.css";
 import axios from "axios";
