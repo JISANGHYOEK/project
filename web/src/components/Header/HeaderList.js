@@ -5,40 +5,47 @@ import styled from "styled-components";
 function HeaderComponent2(props) {
   return (
     <Navigation>
-      <StyledLink to="/VipPage">
-        <NavItem>V.I.P 회원</NavItem>
-      </StyledLink>
-      <StyledLink to="/FreeRePage">
-        <NavItem>무료 추천 종목</NavItem>
-      </StyledLink>
-      <StyledLink to="/RorPage">
-        <NavItem>무료 추천 종목 수익률</NavItem>
-      </StyledLink>
-      <StyledLink to="/CscPage">
-        <NavItem>고객 센터</NavItem>
-      </StyledLink>
-      <StyledLink to="/AskPage">
-        <NavItem>
-          문의하기
-          <DropdownMenu>
-            <Link to="/faq">문의 내역</Link>
-          </DropdownMenu>
-        </NavItem>
-      </StyledLink>
+      <NavItem>
+        <StyledLink to="/VipPage">V.I.P 회원</StyledLink>
+      </NavItem>
+      <NavItem>
+        <StyledLink to="/FreeRePage">무료 추천 종목</StyledLink>
+      </NavItem>
+      <NavItem>
+        <StyledLink to="/RorPage">무료 추천 종목 수익률</StyledLink>
+      </NavItem>
+      <NavItem>
+        <StyledLink to="/CscPage">고객 센터</StyledLink>
+      </NavItem>
+      <NavItem>
+        <StyledLink>문의</StyledLink>
+        <DropdownList>
+          <DropdownItem to="/AskPage">문의 하기</DropdownItem>
+          <DropdownItem to="/faq">문의 내역</DropdownItem>
+        </DropdownList>
+      </NavItem>
     </Navigation>
   );
 }
 
-const DropdownMenu = styled.div`
+const DropdownList = styled.div`
    display: none;
-   position: absolute
-   top: 100%;
-   left: 0;
-   width: auto; // 수정된 코드
+   position: absolute;
+   left: -32px;
+   width: 80px;
+   padding: 10px;
+   background-color: #f8f9fa;
    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-   a {
-      text-decoration: none;
-   }
+`;
+
+const DropdownItem = styled(Link)`
+  display: block;
+  text-decoration: none;
+  color: inherit;
+
+  &:hover {
+    color: #f03e3e;
+  }
 `;
 
 const Navigation = styled.div`
@@ -62,9 +69,11 @@ const NavItem = styled.div`
 
   &:hover {
     color: #f03e3e;
-    & > div {
-      display: block;
-    }
+  }
+
+  &:hover > div {
+    display: block;
+    color: black;
   }
 `;
 
