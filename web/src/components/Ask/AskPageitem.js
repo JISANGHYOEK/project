@@ -30,21 +30,42 @@ function AskPageitem() {
     // 폼이 제출되었을 때 할 작업들을 처리하는 함수
     // 여기에 제출된 데이터를 어딘가에 저장하거나 다른 동작을 수행할 수 있습니다.
     e.preventDefault();
+
     if (!isLogin) {
       alert("회원만 이용 가능합니다.");
-    } else if (!title) {
-      alert("제목을 입력해주세요.");
-    } else if (!name) {
-      alert("이름을 입력해주세요.");
-    } else if (!email) {
-      alert("이메일을 입력해주세요.");
-    } else if (!content) {
-      alert("문의내용을 입력해주세요.");
-    } else {
-      // 모든 필드가 유효하고 사용자가 로그인한 상태라면, 폼 제출을 처리합니다.
+      return;
     }
+
+    if (!title) {
+      alert("제목을 입력해주세요.");
+      return;
+    }
+
+    if (!name) {
+      alert("이름을 입력해주세요.");
+      return;
+    }
+
+    if (!email) {
+      alert("이메일을 입력해주세요.");
+      return;
+    }
+
+    if (!content) {
+      alert("문의내용을 입력해주세요.");
+      return;
+    }
+
+    // 서버로 보낼 데이터
+    const data = {
+      title: title,
+      username: name,
+      email: email,
+      content: content,
+    };
+
     axios
-      .post("http://10000mr.com:8080/api/AskPage", data, {
+      .post("http://10000mr.com/api/AskPage", data, {
         withCredentials: true,
       })
       .then((response) => {
@@ -56,17 +77,10 @@ function AskPageitem() {
       })
       .catch((error) => {
         console.error(error);
+        alert("회원만 이용 가능합니다.");
         // 로그인 실패 시 처리 로직을 작성하세요.
         // 예: 에러 메시지를 표시하거나, 입력 필드를 초기화 등
       });
-  };
-
-  // 서버로 보낼 데이터
-  const data = {
-    title: title,
-    username: name,
-    email: email,
-    content: content,
   };
 
   // axios를 사용하여 서버에 로그인 요청을 보냅니다.
