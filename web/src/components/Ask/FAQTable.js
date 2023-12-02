@@ -45,8 +45,10 @@ function FAQTable({ faqs }) {
       try {
         const response = await axios.post(
           `api/AdminAskPage/${selectedFAQ.id}`,
-          { answer }
+          { answer: answer }
         );
+
+        selectedFAQ.answer = answer;
 
         // 요청이 성공적으로 처리되었을 때의 로직
         alert("답변이 성공적으로 제출되었습니다.");

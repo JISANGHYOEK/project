@@ -239,15 +239,10 @@ router.post("/AdminAskPage/:id", (req, res) => {
     res.status(401).json({ message: "로그인 후 이용 가능합니다." });
     return;
   }
+  
+  let sql = "UPDATE FAQ SET answer = ? WHERE id = ?";
 
-  let newPost = {
-    answer: req.body.answer,
-    created_At: new Date(),
-  };
-
-  let sql = "UPDATE FAQ SET ? WHERE id = ?";
-
-  con.query(sql, [newPost, req.params.id], (err, result) => {
+  con.query(sql, [req.body.answer, req.params.id], (err, result) => {
     if (err) {
       throw err;
     }
