@@ -5,7 +5,9 @@ const useStore = create((set) => ({
   isLogin: false,
   logIn: async (data) => {
     try {
-      const response = await axios.post("/api/login", data);
+      const response = await axios.post("/api/login", data, {
+        withCredentials: true,
+      });
       if (response.status === 200) {
         set({ isLogin: true });
       }

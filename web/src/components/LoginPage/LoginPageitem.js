@@ -30,7 +30,7 @@ function LoginPageitem() {
     const data = { UserID: id, Password: password };
 
     // axios를 사용하여 서버에 로그인 요청을 보냅니다.
-    axios.post("/api/login", data, { withCredentials: true });
+    // axios.post("/api/login", data, { withCredentials: true });
     logIn(data)
       .then((response) => {
         console.log(response);
