@@ -31,7 +31,7 @@ function AskPageitem() {
     // 여기에 제출된 데이터를 어딘가에 저장하거나 다른 동작을 수행할 수 있습니다.
     e.preventDefault();
     if (!isLogin) {
-      alert("로그인 먼저해주세요");
+      alert("회원만 이용 가능합니다.");
     } else if (!title) {
       alert("제목을 입력해주세요.");
     } else if (!name) {
