@@ -140,7 +140,7 @@ router.get("/isAdmin", (req, res) => {
     if (err) {
       throw err;
     }
-    
+
     if (!result[0].Admin) {
       res.status(401).json({ message: "사용자 확인에 실패했습니다." });
       return;
@@ -148,8 +148,7 @@ router.get("/isAdmin", (req, res) => {
 
     res.status(200).json({ message: "사용자 확인에 성공했습니다." });
   });
-
-})
+});
 
 // 글 목록
 router.get("/AskPage", (req, res) => {
@@ -233,5 +232,39 @@ router.delete("/AskPage/:id", (req, res) => {
     res.status(200).json(result);
   });
 });
+
+//admin 글 작성
+router.post("/AdminAskPage/:id", (req, res) => {
+  if (!req.session.userID) {
+    res.status(401).json({ message: "로그인 후 이용 가능합니다." });
+    return;
+  }
+
+  let newPost = {
+    answer: req.body.answer,
+    created_At: new Date(),
+  };
+
+  let sql = "UPDATE FAQ SET ? WHERE id = ?";
+
+  con.query(sql, [newPost, req.params.id], (err, result) => {
+    if (err) {
+      throw err;
+    }
+    res.status(200).json(result);
+  });
+});
+
+// //admin 글 불러오기
+// router.get("/AdminAskPage/:id", (req, res) => {
+//   let sql = "SELECT answer FROM FAQ WHERE id = ?";
+
+//   con.query(sql, req.params.id, (err, result) => {
+//     if (err) {
+//       throw err;
+//     }
+//     res.status(200).json(result);
+//   });
+// });
 
 module.exports = router;

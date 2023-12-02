@@ -9,6 +9,7 @@ import { adminStore } from "../../store";
 function FAQPage() {
   const [data, setData] = useState([]);
   const { setAdmin } = adminStore();
+  const [answer, setAnswer] = useState("");
 
   useEffect(() => {
     axios

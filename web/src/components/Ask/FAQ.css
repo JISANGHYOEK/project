@@ -47,9 +47,35 @@ hr {
   margin-bottom: 10px;
 }
 
+.faq-answer {
+  font-size: 18px;
+  color: #444;
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+.answer-input {
+  width: calc(100% - 20px);
+  height: 200px;
+  box-sizing: border-box;
+  resize: none;
+}
+
 /* 페이지네이션 스타일 */
 .pagination-style {
   display: flex;
   justify-content: center;
   margin-top: 20px;
+}
+
+.answer-submit-btn {
+  padding: 8px 20px;
+  background-color: orangered;
+  color: white;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
 }
