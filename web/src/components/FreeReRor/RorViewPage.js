@@ -7,6 +7,14 @@ import FooterComponent from "../Footer/Footer";
 
 //상세보기 페이지
 
+function getDate(time) {
+  const date = new Date(time);
+  const year = date.getFullYear();
+  const month = ("0" + (1 + date.getMonth())).slice(-2);
+  const day = ("0" + date.getDate()).slice(-2);
+  return year + "-" + month + "-" + day;
+}
+
 function RorViewPage() {
   const params = useParams();
   const [Ror, setRor] = useState([]);
@@ -17,7 +25,7 @@ function RorViewPage() {
         withCredentials: true,
       })
       .then((response) => {
-        setFre(response.data);
+        setRor(response.data);
       })
       .catch((error) => {
         console.error(error);
@@ -38,7 +46,6 @@ function RorViewPage() {
         <div className="Ror-view-row">
           <label>작성일</label>
           <label>{Ror[0].created_At}</label>{" "}
-          {/* createDate 대신 created_At로 수정합니다. */}
         </div>
         <div className="Ror-view-row">
           <label>내용</label>
