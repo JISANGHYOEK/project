@@ -23,12 +23,22 @@ function RorPage({ Rors }) {
         setAdmin(false);
       });
   }, []);
+  useEffect(() => {
+    axios
+      .get("api/Ror")
+      .then((response) => {
+        setData(response.data);
+      })
+      .catch((error) => {
+        console.error("데이터를 가져오는 중 오류 발생:", error);
+      });
+  }, []);
 
   return (
     <div>
       <HeaderComponent />
-      <RorPageitem Rors={Rors} />
-      <RorTable Rors={Rors} />
+      <RorPageitem Rors={data} />
+      <RorTable Rors={data} />
       <FooterComponent />
     </div>
   );

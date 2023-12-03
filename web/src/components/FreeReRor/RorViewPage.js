@@ -8,25 +8,23 @@ import FooterComponent from "../Footer/Footer";
 //상세보기 페이지
 
 function RorViewPage() {
-  const { RorId } = useParams();
-  const [question, setQuestion] = useState({});
-  const [answer, setAnswer] = useState({});
+  const params = useParams();
+  const [Ror, setRor] = useState([]);
 
-  //   useEffect(() => {
-  //     const fetchData = async () => {
-  //       try {
-  //         const response = await axios.get(
-  //           `http://10000mr.com:8080/RorPage/${RorId}`
-  //         );
-  //         setQuestion(response.data.question);
-  //         setAnswer(response.data.answer);
-  //       } catch (error) {
-  //         console.error("데이터를 가져오는 중 오류 발생:", error);
-  //       }
-  //     };
+  useEffect(() => {
+    axios
+      .get("http://10000mr.com/api/Ror/" + params.id, {
+        withCredentials: true,
+      })
+      .then((response) => {
+        setFre(response.data);
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  }, []);
 
-  //     fetchData();
-  //   }, [RorId]);
+  if (Ror.length < 1) return <></>;
 
   return (
     <div>
@@ -35,15 +33,16 @@ function RorViewPage() {
       <div className="Ror-view-wrapper">
         <div className="Ror-view-row">
           <label>제목</label>
-          <label>{question.title}</label>
+          <label>{Ror[0].title}</label>
         </div>
         <div className="Ror-view-row">
           <label>작성일</label>
-          <label>{question.createDate}</label>
+          <label>{Ror[0].created_At}</label>{" "}
+          {/* createDate 대신 created_At로 수정합니다. */}
         </div>
         <div className="Ror-view-row">
           <label>내용</label>
-          <div>{question.content}</div>
+          <div>{Ror[0].content}</div>
         </div>
       </div>
       <FooterComponent />
