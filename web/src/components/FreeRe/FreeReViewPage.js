@@ -13,14 +13,14 @@ function FreeReViewPage() {
 
    useEffect(() => {
       axios
-        .get("http://10000mr.com/api/FreeRe/" + params.id, { withCredentials: true })
-        .then((response) => {
+         .get('http://10000mr.com/api/FreeRe/' + params.id, { withCredentials: true })
+         .then(response => {
             setFre(response.data);
-        })
-        .catch((error) => {
+         })
+         .catch(error => {
             console.error(error);
-        });
-    }, []);
+         });
+   }, []);
 
    if (Fre.length < 1) return <></>;
 

@@ -275,10 +275,10 @@ router.post('/FreeRe', (req, res) => {
 });
 
 router.get('/FreeRe', (req, res) => {
-   if (!req.session.userID) {
-      res.status(401).json({ message: '로그인 후 이용 가능합니다.' });
-      return;
-   }
+   //  if (!req.session.userID) {
+   //     res.status(401).json({ message: '로그인 후 이용 가능합니다.' });
+   //     return;
+   //  }
 
    let sql = 'SELECT * FROM FRboard';
 
@@ -291,10 +291,10 @@ router.get('/FreeRe', (req, res) => {
 });
 
 router.get('/FreeRe/:id', (req, res) => {
-   if (!req.session.userID) {
-      res.status(401).json({ message: '로그인 후 이용 가능합니다.' });
-      return;
-   }
+   //  if (!req.session.userID) {
+   //     res.status(401).json({ message: '로그인 후 이용 가능합니다.' });
+   //     return;
+   //  }
 
    let sql = 'SELECT * FROM FRboard WHERE id = ?';
 
