@@ -339,7 +339,7 @@ router.get('/Ror', (req, res) => {
    //     return;
    //  }
 
-   let sql = 'SELECT * FROM FRboard';
+   let sql = 'SELECT * FROM Rorboard';
 
    con.query(sql, (err, result) => {
       if (err) {
@@ -356,7 +356,7 @@ router.get('/Ror/:id', (req, res) => {
    //     return;
    //  }
 
-   let sql = 'SELECT * FROM FRboard WHERE id = ?';
+   let sql = 'SELECT * FROM Rorboard WHERE id = ?';
 
    con.query(sql, [req.params.id], (err, result) => {
       if (err) {
