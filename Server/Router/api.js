@@ -322,7 +322,7 @@ router.post('/Ror', (req, res) => {
       created_At: new Date(),
    };
 
-   let sql = 'INSERT INTO ROrboard SET ?';
+   let sql = 'INSERT INTO Rorboard SET ?';
 
    con.query(sql, newPost, (err, result) => {
       if (err) {
