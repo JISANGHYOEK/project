@@ -61,7 +61,7 @@ function App() {
             <Route path="/FreeRePage/FreeReWritePage" element={<FreeReWritePage />} />
 
             <Route path="/RorPage" element={<RorPage Rors={Rors} />} />
-            <Route path="/RorPage/:RorPageID" element={<RorViewPage />} />
+            <Route path="/RorPage/:id" element={<RorViewPage />} />
             <Route path="/RorPage/RorWritePage" element={<RorWritePage />} />
          </Routes>
       </Router>
