@@ -1,10 +1,13 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { Pagination, Box } from "@mui/material";
-
+import { adminStore } from "../../store";
 import "./Ror.css";
+import RorWriteHeader from "./RorWriterHeader";
 
 function RorTable({ Rors }) {
+  const { isAdmin } = adminStore();
+
   const itemsPerPage = 7; // 페이지당 보여줄 항목 수
   const totalItems = Rors.length; // 전체 항목 수
   const totalPages = Math.ceil(totalItems / itemsPerPage); // 전체 페이지 수
@@ -27,6 +30,7 @@ function RorTable({ Rors }) {
   return (
     <div className="form-container">
       <label className="title">미래투자 매매 수익 결산</label>
+      {isAdmin && <RorWriteHeader />}
       <table className="Ror-table">
         <tbody>
           {currentItems.map((Ror) => (

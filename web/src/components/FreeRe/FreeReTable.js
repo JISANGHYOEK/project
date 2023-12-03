@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { Pagination, Box } from "@mui/material";
 import "./FreeRe.css";
+import { adminStore } from "../../store";
+import FreeReWriteHeader from "./FreeReWriteHeader";
 
 function FreeReTable({ FreeReDatas }) {
   const itemsPerPage = 7; // 페이지당 보여줄 항목 수
@@ -9,6 +11,8 @@ function FreeReTable({ FreeReDatas }) {
   const totalPages = Math.ceil(totalItems / itemsPerPage); // 전체 페이지 수
 
   const [currentPage, setCurrentPage] = useState(1); // 현재 페이지 번호
+
+  const { isAdmin } = adminStore();
 
   const handlePageChange = (event, pageNumber) => {
     setCurrentPage(pageNumber);
@@ -26,6 +30,7 @@ function FreeReTable({ FreeReDatas }) {
   return (
     <div className="form-container">
       <label className="title">미래투자 무료 추천 종목</label>
+      {isAdmin && <FreeReWriteHeader />}
       <table className="FreeRe-table">
         <tbody>
           {currentItems.map((FreeReData) => (

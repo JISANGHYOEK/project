@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "./RorWrite.css";
+import RorWriterHeader from "./RorWriterHeader";
 
 function RorWritePageitem() {
   const [title, setTitle] = useState("");
