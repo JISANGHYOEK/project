@@ -250,7 +250,7 @@ router.post('/AdminAskPage/:id', (req, res) => {
 //   });
 // });
 
-//무료추천종목 글쓰기
+//무료추천종목 글 작성
 router.post('/FreeRe', (req, res) => {
    if (!req.session.userID) {
       res.status(401).json({ message: '로그인 후 이용 가능합니다.' });
