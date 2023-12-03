@@ -274,6 +274,7 @@ router.post('/FreeRe', (req, res) => {
    });
 });
 
+//무료추천종목리스트
 router.get('/FreeRe', (req, res) => {
    //  if (!req.session.userID) {
    //     res.status(401).json({ message: '로그인 후 이용 가능합니다.' });
@@ -290,6 +291,7 @@ router.get('/FreeRe', (req, res) => {
    });
 });
 
+//무료추천종목내용
 router.get('/FreeRe/:id', (req, res) => {
    //  if (!req.session.userID) {
    //     res.status(401).json({ message: '로그인 후 이용 가능합니다.' });
@@ -299,6 +301,30 @@ router.get('/FreeRe/:id', (req, res) => {
    let sql = 'SELECT * FROM FRboard WHERE id = ?';
 
    con.query(sql, [req.params.id], (err, result) => {
+      if (err) {
+         throw err;
+      }
+      res.status(200).json(result);
+   });
+});
+
+//무료추천종목수익률 리스트
+router.post('/Ror', (req, res) => {
+   if (!req.session.userID) {
+      res.status(401).json({ message: '로그인 후 이용 가능합니다.' });
+      return;
+   }
+
+   let newPost = {
+      title: req.body.title,
+      content: req.body.content,
+      image_path: req.body.image_path,
+      created_At: new Date(),
+   };
+
+   let sql = 'INSERT INTO ROrboard SET ?';
+
+   con.query(sql, newPost, (err, result) => {
       if (err) {
          throw err;
       }

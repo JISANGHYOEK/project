@@ -7,6 +7,14 @@ import FooterComponent from '../Footer/Footer';
 import FreeReWriteHeader from './FreeReWriteHeader';
 //상세보기 페이지
 
+function getDate(time) {
+   const date = new Date(time);
+   const year = date.getFullYear();
+   const month = ("0" + (1 + date.getMonth())).slice(-2);
+   const day = ("0" + date.getDate()).slice(-2);
+   return year + "-" + month + "-" + day;
+}
+
 function FreeReViewPage() {
    const params = useParams();
    const [Fre, setFre] = useState([]);
@@ -35,7 +43,7 @@ function FreeReViewPage() {
             </div>
             <div className="FreeRe-view-row">
                <label>작성일</label>
-               <label>{Fre[0].created_At}</label> {/* createDate 대신 created_At로 수정합니다. */}
+               <label>{getDate(Fre[0].created_At)}</label> {/* createDate 대신 created_At로 수정합니다. */}
             </div>
             <div className="FreeRe-view-row">
                <label>내용</label>
