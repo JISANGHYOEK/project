@@ -55,6 +55,7 @@ function FreeReWritePageitem() {
         <div className="FreeRe-view-row">
           <label>내용</label>
           <textarea
+            style={{ height: "500px" }}
             onChange={(event) => setContent(event.target.value)}
           ></textarea>
         </div>
