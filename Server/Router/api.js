@@ -308,7 +308,7 @@ router.get('/FreeRe/:id', (req, res) => {
    });
 });
 
-//무료추천종목수익률 리스트
+//무료추천종목수익률 작성
 router.post('/Ror', (req, res) => {
    if (!req.session.userID) {
       res.status(401).json({ message: '로그인 후 이용 가능합니다.' });
@@ -325,6 +325,40 @@ router.post('/Ror', (req, res) => {
    let sql = 'INSERT INTO Rorboard SET ?';
 
    con.query(sql, newPost, (err, result) => {
+      if (err) {
+         throw err;
+      }
+      res.status(200).json(result);
+   });
+});
+
+//무료추천종목수익률 목록
+router.get('/FreeRe', (req, res) => {
+   //  if (!req.session.userID) {
+   //     res.status(401).json({ message: '로그인 후 이용 가능합니다.' });
+   //     return;
+   //  }
+
+   let sql = 'SELECT * FROM FRboard';
+
+   con.query(sql, (err, result) => {
+      if (err) {
+         throw err;
+      }
+      res.status(200).json(result);
+   });
+});
+
+//무료추천종목수익률 내용
+router.get('/FreeRe/:id', (req, res) => {
+   //  if (!req.session.userID) {
+   //     res.status(401).json({ message: '로그인 후 이용 가능합니다.' });
+   //     return;
+   //  }
+
+   let sql = 'SELECT * FROM FRboard WHERE id = ?';
+
+   con.query(sql, [req.params.id], (err, result) => {
       if (err) {
          throw err;
       }
