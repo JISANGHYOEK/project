@@ -274,6 +274,22 @@ router.post('/FreeRe', (req, res) => {
    });
 });
 
+router.get('/FreeRe', (req, res) => {
+   if (!req.session.userID) {
+      res.status(401).json({ message: '로그인 후 이용 가능합니다.' });
+      return;
+   }
+
+   let sql = 'SELECT * FROM FRboard';
+
+   con.query(sql, (err, result) => {
+      if (err) {
+         throw err;
+      }
+      res.status(200).json(result);
+   });
+});
+
 //아이디 찾기
 router.post('/findId', function (req, res, next) {
    var Email = req.body.email;
