@@ -7,20 +7,22 @@ import FooterComponent from '../Footer/Footer';
 import FreeReWriteHeader from './FreeReWriteHeader';
 //상세보기 페이지
 
-function FreeReViewPage({}) {
-   const [Fre, setFre] = useState();
-   const { id } = useParams(); // 현재 URL에서 id 파라미터를 가져옵니다.
-
-   const getFreeReview = async () => {
-      const response = await axios.get(`api/FreeRe/${id}`); // 요청 URL에 id를 포함합니다.
-      setFre(response.data);
-   };
+function FreeReViewPage() {
+   const params = useParams();
+   const [Fre, setFre] = useState([]);
 
    useEffect(() => {
-      getFreeReview();
-   }, [id]); // id가 변경될 때마다 게시글 정보를 다시 불러옵니다.
+      axios
+        .get("http://10000mr.com/api/FreeRe/" + params.id, { withCredentials: true })
+        .then((response) => {
+            setFre(response.data);
+        })
+        .catch((error) => {
+            console.error(error);
+        });
+    }, []);
 
-   if (!Fre) return null; // 게시글 정보가 아직 없으면 아무것도 보여주지 않습니다.
+   if (Fre.length < 1) return <></>;
 
    return (
       <div>
@@ -29,15 +31,15 @@ function FreeReViewPage({}) {
          <div className="FreeRe-view-wrapper">
             <div className="FreeRe-view-row">
                <label>제목</label>
-               <label>{Fre.title}</label>
+               <label>{Fre[0].title}</label>
             </div>
             <div className="FreeRe-view-row">
                <label>작성일</label>
-               <label>{Fre.created_At}</label> {/* createDate 대신 created_At로 수정합니다. */}
+               <label>{Fre[0].created_At}</label> {/* createDate 대신 created_At로 수정합니다. */}
             </div>
             <div className="FreeRe-view-row">
                <label>내용</label>
-               <div>{Fre.content}</div>
+               <div>{Fre[0].content}</div>
             </div>
          </div>
          <FooterComponent />

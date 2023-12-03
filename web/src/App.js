@@ -57,7 +57,7 @@ function App() {
             <Route path="/faq/:id" element={<FAQItem />} />
             <Route path="/VipPage" element={<VipPage />} />
             <Route path="/FreeRePage" element={<FreeRePage FreeReDatas={FreeReDatas} />} />
-            <Route path="/FreeRePage/id=:id" element={<FreeReViewPage />} />
+            <Route path="/FreeRePage/:id" element={<FreeReViewPage />} />
             <Route path="/FreeRePage/FreeReWritePage" element={<FreeReWritePage />} />
 
             <Route path="/RorPage" element={<RorPage Rors={Rors} />} />

@@ -289,22 +289,22 @@ router.get('/FreeRe', (req, res) => {
       res.status(200).json(result);
    });
 });
-// //특정글불러오는api
-// router.get('/FreeRe/:id', (req, res) => {
-//    if (!req.session.userID) {
-//       res.status(401).json({ message: '로그인 후 이용 가능합니다.' });
-//       return;
-//    }
 
-//    let sql = 'SELECT * FROM FRboard WHERE id = ?';
+router.get('/FreeRe/:id', (req, res) => {
+   if (!req.session.userID) {
+      res.status(401).json({ message: '로그인 후 이용 가능합니다.' });
+      return;
+   }
 
-//    con.query(sql, [req.params.id], (err, result) => {
-//       if (err) {
-//          throw err;
-//       }
-//       res.status(200).json(result);
-//    });
-// });
+   let sql = 'SELECT * FROM FRboard WHERE id = ?';
+
+   con.query(sql, [req.params.id], (err, result) => {
+      if (err) {
+         throw err;
+      }
+      res.status(200).json(result);
+   });
+});
 
 //아이디 찾기
 router.post('/findId', function (req, res, next) {
