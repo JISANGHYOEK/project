@@ -3,7 +3,6 @@ import { Box } from "@mui/material";
 
 function Bodybox1() {
   return (
-    
     <Box
       width="60%"
       height={200}

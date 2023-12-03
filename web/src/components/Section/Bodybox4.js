@@ -1,19 +1,18 @@
 import React from "react";
 import { Box } from "@mui/material";
+import styled from "styled-components";
 
 function Bodybox4() {
-    return (
-    
-    <Box
-        width="60%"
-        height={250}
-        bgcolor="white"
-        marginTop={2}
-        boxShadow="1px 1px 1px 0px rgba(0, 0, 0, 0.1), 0px 4px 4px 0px rgba(0, 0, 0, 0.25)"
-    >
-    <h1>사진</h1>
-    </Box>
-    );
+  return (
+    <StyledImage src="/banner1.png" alt="banner2" width="230" height="220" />
+  );
 }
+
+const StyledImage = styled.img`
+  margin-left: 310px;
+  width: 60%;
+  height: 500px;
+  border-radius: 5px; /* 설정할 테두리 반경 값 */
+`;
 
 export default Bodybox4;

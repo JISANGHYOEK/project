@@ -12,7 +12,7 @@ function Youtubebox() {
 
   return (
     <Box
-      width="32%"
+      width="60%"
       height={450}
       bgcolor="white"
       marginTop={2}
