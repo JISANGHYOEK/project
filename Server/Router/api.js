@@ -333,7 +333,7 @@ router.post('/Ror', (req, res) => {
 });
 
 //무료추천종목수익률 목록
-router.get('/FreeRe', (req, res) => {
+router.get('/Ror', (req, res) => {
    //  if (!req.session.userID) {
    //     res.status(401).json({ message: '로그인 후 이용 가능합니다.' });
    //     return;
@@ -350,7 +350,7 @@ router.get('/FreeRe', (req, res) => {
 });
 
 //무료추천종목수익률 내용
-router.get('/FreeRe/:id', (req, res) => {
+router.get('/Ror/:id', (req, res) => {
    //  if (!req.session.userID) {
    //     res.status(401).json({ message: '로그인 후 이용 가능합니다.' });
    //     return;
