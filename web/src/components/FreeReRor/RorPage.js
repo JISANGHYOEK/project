@@ -32,6 +32,17 @@ function RorPage() {
             console.error('데이터를 가져오는 중 오류 발생:', error);
          });
    }, []);
+   useEffect(() => {
+      axios
+         .get('/api/isAdmin', { withCredentials: true })
+         .then(response => {
+            setAdmin(true);
+         })
+         .catch(error => {
+            console.error(error);
+            setAdmin(false);
+         });
+   }, []);
 
    return (
       <div>
