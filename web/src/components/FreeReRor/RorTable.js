@@ -37,7 +37,7 @@ function RorTable({ Rors }) {
             <tr className="Ror-table-row" key={Ror.id}>
               <td className="Ror-table-column">
                 <div>
-                  <Link to={`/RorPage/id=${Ror.id}`} className="item-title">
+                  <Link to={`/RorPage/${Ror.id}`} className="item-title">
                     {Ror.title}
                   </Link>
                   <span className="item-date">{Ror.createAt}</span>{" "}
