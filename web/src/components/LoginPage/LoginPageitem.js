@@ -45,6 +45,19 @@ function LoginPageitem() {
         // 예: 에러 메시지를 표시하거나, 입력 필드를 초기화 등
       });
   };
+  const openpwd = () => {
+    const url = "/forgot-pwd"; // 원하는 URL로 변경하세요.
+    const windowFeatures =
+      "menubar=no,location=no,resizable=yes,scrollbars=yes,status=yes,width=500,height=600";
+    window.open(url, "_blank", windowFeatures);
+  };
+  const openid = () => {
+    const url = "/forgot-id"; // 원하는 URL로 변경하세요.
+    const windowFeatures =
+      "menubar=no,location=no,resizable=yes,scrollbars=yes,status=yes,width=500,height=600";
+    window.open(url, "_blank", windowFeatures);
+  };
+
   return (
     <StyledLoginPage>
       <div className="login-page">
@@ -69,8 +82,8 @@ function LoginPageitem() {
             <StyledButton type="submit">로그인</StyledButton>
           </div>
           <div>
-            <StyledLink to="/forgot-password">비밀번호 찾기</StyledLink>
-            <StyledLink to="/forgot-username">아이디 찾기</StyledLink>
+            <StyledLink onClick={openpwd}>비밀번호 찾기</StyledLink>
+            <StyledLink onClick={openid}>아이디 찾기</StyledLink>
             <StyledLink to="/TermsAgree">회원가입하기</StyledLink>
           </div>
         </LoginForm>

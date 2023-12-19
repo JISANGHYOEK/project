@@ -9,7 +9,7 @@ function Bodybox4() {
 }
 
 const StyledImage = styled.img`
-  margin-left: 310px;
+  margin-left: 380px;
   width: 60%;
   height: 500px;
   border-radius: 5px; /* 설정할 테두리 반경 값 */

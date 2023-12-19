@@ -6,7 +6,7 @@ function Bodybox2() {
   return (
     <div>
       <StyledBox
-        width={230}
+        width={250}
         height={210}
         bgcolor="white"
         margin={2}
@@ -19,7 +19,7 @@ function Bodybox2() {
         </StyledLink>
       </StyledBox>
       <StyledBox
-        width={230}
+        width={250}
         height={210}
         bgcolor="white"
         margin={2}

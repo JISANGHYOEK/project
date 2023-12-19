@@ -9,8 +9,8 @@ function Bodybox3() {
 }
 
 const StyledImage = styled.img`
-  margin-left: 310px;
-  width: 650px;
+  margin-left: 400px;
+  width: 750px;
   height: 430px;
   border-radius: 5px; /* 설정할 테두리 반경 값 */
 `;

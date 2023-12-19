@@ -1,0 +1,9 @@
+.Userinfo-container {
+  overflow: hidden; /* 추가된 코드 */
+}
+
+.Userinfo-form {
+  width: 500px;
+  height: 600px;
+  overflow: hidden;
+}

@@ -1,9 +1,12 @@
 .login-page {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .login-form {
-    text-align: center;
+  text-align: center;
+}
+
+.info-button {
 }

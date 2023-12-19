@@ -3,17 +3,14 @@ import HeaderComponent from "../Header/Header";
 import FooterComponent from "../Footer/Footer";
 import LoginPageitem from "./LoginPageitem";
 
-function LoginPage(){
-
+function LoginPage() {
   return (
     <div>
-        <HeaderComponent />
-        <LoginPageitem/>
-        <FooterComponent />
+      <HeaderComponent />
+      <LoginPageitem />
+      <FooterComponent />
     </div>
   );
-};
-
-
+}
 
 export default LoginPage;
