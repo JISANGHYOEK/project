@@ -47,17 +47,18 @@ const Img = styled.img`
   aspect-ratio: 6.23;
   object-fit: contain;
   object-position: center;
-  width: 45%;
+  width: 650px; /* 이미지 너비를 고정 */
+  height: auto; /* 높이는 자동으로 조절 */
   overflow: hidden;
-  margin-top: 10px; /* 원하는 여백을 추가합니다 */
-  margin-bottom: 10px; /* 원하는 여백을 추가합니다 */
+  margin-top: 10px;
+  margin-bottom: 10px;
 `;
 
 const Divheader = styled.div`
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  padding: 0 130px;
+  padding: 0 30px; /* 패딩 값을 조정 */
 `;
 
 const DivImg = styled.div`

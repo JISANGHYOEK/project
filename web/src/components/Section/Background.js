@@ -10,26 +10,11 @@ import Bodybox4 from "./Bodybox4";
 function Bodycolorcomponent() {
   return (
     <Bodycolor>
-      <Box display="flex" flexDirection="column" alignItems="center">
-        <Bodybox1 />
-      </Box>
-
-      <Box
-        display="flex"
-        justifyContent="center"
-        paddingRight={0.2}
-        flexDirection="row"
-        alignItems="center"
-        flexWrap="wrap"
-      >
-        <Youtubebox />
-      </Box>
-
-      <Box display="flex" alignItems="center" marginTop={2}>
-        <Bodybox3 />
-        <Bodybox2 />
-      </Box>
+      <Bodybox1 />
+      <Youtubebox />
+      <Bodybox3 />
       <Bodybox4 />
+      {/* <Bodybox2 /> */}
     </Bodycolor>
   );
 }
