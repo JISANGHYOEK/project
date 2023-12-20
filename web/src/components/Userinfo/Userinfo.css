@@ -1,9 +1,45 @@
 .Userinfo-container {
-  overflow: hidden; /* 추가된 코드 */
+  margin-left: 40px;
+  height: 100vh;
+  width: 500px;
+  height: 600px;
 }
 
 .Userinfo-form {
-  width: 500px;
-  height: 600px;
-  overflow: hidden;
+  padding: 50px;
+  border-radius: 8px;
+  width: 300px;
+}
+
+.Userinfo-form h4 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.Userinfo-form form label {
+  display: block;
+}
+
+.Userinfo-form form input {
+  width: 100%;
+  padding: 8px;
+  font-size: 1rem;
+  border-radius: 4px;
+}
+
+.Userinfo-form form button {
+  width: 320px;
+  padding: 10px;
+  font-size: 1rem;
+  background-color: orangered;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.Userinfo-form form button:hover {
+  background-color: orangered;
 }

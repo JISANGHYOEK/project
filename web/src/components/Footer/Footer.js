@@ -20,7 +20,7 @@ function FooterComponent() {
         </Link>
       </FooterContent>
 
-      <Copyright>&copy; 2023 만랩파트너스</Copyright>
+      <Copyright>&copy; 2023 케이투자</Copyright>
     </FooterContainer>
   );
 }

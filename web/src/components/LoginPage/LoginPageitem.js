@@ -47,15 +47,23 @@ function LoginPageitem() {
   };
   const openpwd = () => {
     const url = "/forgot-pwd"; // 원하는 URL로 변경하세요.
-    const windowFeatures =
-      "menubar=no,location=no,resizable=yes,scrollbars=yes,status=yes,width=500,height=600";
-    window.open(url, "_blank", windowFeatures);
+    const windowFeatures = "menubar=no,location=no,resizable=yes,status=yes";
+    const popup = window.open(url, "_blank", windowFeatures);
+
+    popup.addEventListener("load", () => {
+      popup.document.documentElement.style.overflow = "hidden";
+      popup.resizeTo(500, 600);
+    });
   };
   const openid = () => {
     const url = "/forgot-id"; // 원하는 URL로 변경하세요.
-    const windowFeatures =
-      "menubar=no,location=no,resizable=yes,scrollbars=yes,status=yes,width=500,height=600";
-    window.open(url, "_blank", windowFeatures);
+    const windowFeatures = "menubar=no,location=no,resizable=yes,status=yes";
+    const popup = window.open(url, "_blank", windowFeatures);
+
+    popup.addEventListener("load", () => {
+      popup.document.documentElement.style.overflow = "hidden";
+      popup.resizeTo(500, 600);
+    });
   };
 
   return (
