@@ -4,7 +4,7 @@
     "client-local": "cd ./web && npm start",
     "local": "concurrently --kill-others-on-fail \"npm run server-local\" \"npm run client-local\"",
     "server": "cd ./Server && nodemon server",
-    "client": "cd ./web && npm start",
+    "client": "cd ./web && PORT=80 npm start",
     "start": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\""
   },
   "dependencies": {
