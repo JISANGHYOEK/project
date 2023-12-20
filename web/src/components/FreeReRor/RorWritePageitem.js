@@ -1,15 +1,17 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import "./RorWrite.css";
 import PostEditor from "./PostEditor";
+
 import { createReactEditorJS } from "react-editor-js";
+import { EDITOR_JS_TOOLS } from "./constants";
+const ReactEditorJS = createReactEditorJS();
 
 function RorWritePageitem() {
   const navigate = useNavigate();
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
-  const ReactEditorJS = createReactEditorJS();
 
   const handleTitleChange = (e) => {
     setTitle(e.target.value);
@@ -18,19 +20,19 @@ function RorWritePageitem() {
     setContent(e.target.value);
   };
 
-  //   useEffect(() => {
-  //     axios
-  //       .get("http://10000mr.com:8080/RorPage/RorWrtiePage")
-  //       .then((response) => {
-  //         setCategory(response.data);
-  //       });
-  //   }, []);
+  // useEffect(() => {
+  //   axios
+  //     .get("http://10000mr.com:8080/RorPage/RorWrtiePage")
+  //     .then((response) => {
+  //       setCategory(response.data);
+  //     });
+  // }, []);
 
-  //   const categories = Object.values(category).map((item) => (
-  //     <option key={item.id} value={item.id}>
-  //       {item.displayName}
-  //     </option>
-  //   ));
+  // const categories = Object.values(category).map((item) => (
+  //   <option key={item.id} value={item.id}>
+  //     {item.displayName}
+  //   </option>
+  // ));
 
   const handleSubmit = (e) => {
     // 폼이 제출되었을 때 할 작업들을 처리하는 함수
@@ -81,8 +83,12 @@ function RorWritePageitem() {
         </div>
         <div className="Ror-view-row">
           <label>내용</label>
-          <ReactEditorJS defaultValue={content} />
-          {/* <PostEditor defaultValue={content} onSave={setContent} /> */}
+          <ReactEditorJS
+            tools={EDITOR_JS_TOOLS}
+            defaultValue={{
+              blocks: [],
+            }}
+          />
         </div>
         <button className="Ror-view-go-list-btn" onClick={handleSubmit}>
           등록
