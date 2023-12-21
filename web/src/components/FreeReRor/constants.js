@@ -22,7 +22,14 @@ export const EDITOR_JS_TOOLS = {
   warning: Warning,
   code: Code,
   linkTool: LinkTool,
-  image: Image,
+  // image: {
+  //   class: ImageTool,
+  //   config: {
+  //     endpoints: {
+  //       byFile: "http://your_server.com:port/uploadFile", // 이미지를 업로드하는 API
+  //     },
+  //   },
+  // },
   raw: Raw,
   header: Header,
   quote: Quote,
