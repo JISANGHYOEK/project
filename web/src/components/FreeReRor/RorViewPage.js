@@ -18,7 +18,7 @@ function getDate(time) {
 function RorViewPage() {
   const params = useParams();
   const [Ror, setRor] = useState([]);
-
+  const [loading, setLoading] = useState(true);
   useEffect(() => {
     axios
       .get("http://10000mr.com/api/Ror/" + params.id, {
@@ -26,36 +26,41 @@ function RorViewPage() {
       })
       .then((response) => {
         setRor(response.data);
+        setLoading(false);
+        console.log("Loading finished.");
+        console.log(response.data);
+        console.log(response.data.content);
       })
       .catch((error) => {
         console.error(error);
+        setLoading(false);
       });
   }, []);
 
   if (Ror.length < 1) return <></>;
-
-  return (
-    <div>
-      <HeaderComponent />
-      <h2 align="center">게시글 상세정보</h2>
-      <div className="Ror-view-wrapper">
-        <div className="Ror-view-row">
-          <label>제목</label>
-          <label>{Ror[0].title}</label>
+  else {
+    return (
+      <div>
+        <HeaderComponent />
+        <h2 align="center">게시글 상세정보</h2>
+        <div className="Ror-view-wrapper">
+          <div className="Ror-view-row">
+            <label>제목</label>
+            <label>{Ror.title}</label>
+          </div>
+          <div className="Ror-view-row">
+            <label>작성일</label>
+            <label>{Ror.created_At}</label>{" "}
+          </div>
+          <div className="Ror-view-row">
+            <label>내용</label>
+            <div dangerouslySetInnerHTML={{ __html: Ror.content }}></div>
+          </div>
         </div>
-        <div className="Ror-view-row">
-          <label>작성일</label>
-          <label>{Ror[0].created_At}</label>{" "}
-          {/* createDate 대신 created_At로 수정합니다. */}
-        </div>
-        <div className="Ror-view-row">
-          <label>내용</label>
-          <div>{Ror[0].content}</div>
-        </div>
+        <FooterComponent />
       </div>
-      <FooterComponent />
-    </div>
-  );
+    );
+  }
 }
 
 export default RorViewPage;

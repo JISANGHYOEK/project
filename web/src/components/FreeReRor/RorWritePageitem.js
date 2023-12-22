@@ -58,13 +58,39 @@ function RorWritePageitem() {
         return content.blocks
           .map((block) => {
             switch (block.type) {
-              case "paragraph":
-              case "header":
-                return block.data.text;
               // 다른 타입의 블록들도 이런 식으로 처리해줄 수 있습니다.
               // case "list":
               //   return block.data.items.join("\n");
-
+              case "paragraph":
+              case "header":
+                return block.data.text;
+              case "list":
+                return block.data.items.join("\n");
+              case "checklist":
+                return block.data.items
+                  .map((item) => (item.checked ? "[x] " : "[ ] ") + item.text)
+                  .join("\n");
+              case "table":
+                return block.data.content
+                  .map((row) => row.join("\t"))
+                  .join("\n");
+              case "quote":
+                return block.data.text;
+              case "delimiter":
+                return "---";
+              case "warning":
+              case "marker":
+                return block.data.title + "\n" + block.data.message;
+              // case "code":
+              //   return block.data.code;
+              case "linkTool":
+                return block.data.link;
+              case "embed":
+                return block.data.embed;
+              case "simpleImage":
+                return block.data.url;
+              case "raw":
+                return block.data.html;
               default:
                 return "";
             }
@@ -81,8 +107,13 @@ function RorWritePageitem() {
 
         const textContent = convertToPlainText(content);
 
-        console.log(textContent);
-
+        // console.log(textContent);
+        // const formdata = new FormData();
+        // formdata.append("title", title);
+        // formdata.append("content", textContent);
+        // images.forEach((image) => {
+        //   formData.append("image_path", image);
+        // });
         const data = {
           title: title,
           content: textContent,

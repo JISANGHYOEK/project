@@ -5,6 +5,7 @@
 .Ror-view-row {
   margin: 10px 0;
   display: flex;
+  white-space: pre-wrap;
 }
 
 .Ror-view-row > label:first-child {

@@ -1,5 +1,7 @@
 const express = require("express");
+const multer = require("multer");
 const router = express.Router();
+const path = require("path");
 const bcrypt = require("bcrypt");
 const { con, app } = require("../db");
 
@@ -262,8 +264,20 @@ router.post("/AdminAskPage/:id", (req, res) => {
 //   });
 // });
 
+//이미지 경로 처리
+let storage = multer.diskStorage({
+  destination: function (req, file, cb) {
+    cb(null, path.join(__dirname, "../upload")); // 여기에 이미지를 저장할 경로를 지정하세요.
+  },
+  filename: function (req, file, cb) {
+    cb(null, Date.now() + path.extname(file.originalname));
+  },
+});
+
+let upload = multer({ storage: storage });
+
 //무료추천종목 글 작성
-router.post("/FreeRe", (req, res) => {
+router.post("/FreeRe", upload.single("image_path"), (req, res) => {
   if (!req.session.userID) {
     res.status(401).json({ message: "로그인 후 이용 가능합니다." });
     return;
@@ -272,7 +286,7 @@ router.post("/FreeRe", (req, res) => {
   let newPost = {
     title: req.body.title,
     content: req.body.content,
-    image_path: req.body.image_path,
+    image_path: req.file.path,
     created_At: new Date(),
   };
 
@@ -288,10 +302,10 @@ router.post("/FreeRe", (req, res) => {
 
 //무료추천종목리스트
 router.get("/FreeRe", (req, res) => {
-  //  if (!req.session.userID) {
-  //     res.status(401).json({ message: '로그인 후 이용 가능합니다.' });
-  //     return;
-  //  }
+  // if (!req.session.userID) {
+  //   res.status(401).json({ message: "로그인 후 이용 가능합니다." });
+  //   return;
+  // }
 
   let sql = "SELECT * FROM FRboard";
 
@@ -305,10 +319,10 @@ router.get("/FreeRe", (req, res) => {
 
 //무료추천종목내용
 router.get("/FreeRe/:id", (req, res) => {
-  //  if (!req.session.userID) {
-  //     res.status(401).json({ message: '로그인 후 이용 가능합니다.' });
-  //     return;
-  //  }
+  // if (!req.session.userID) {
+  //   res.status(401).json({ message: "로그인 후 이용 가능합니다." });
+  //   return;
+  // }
 
   let sql = "SELECT * FROM FRboard WHERE id = ?";
 
@@ -321,16 +335,21 @@ router.get("/FreeRe/:id", (req, res) => {
 });
 
 //무료추천종목수익률 작성
-router.post("/Ror", (req, res) => {
+router.post("/Ror", upload.array("image_path", 50), (req, res) => {
   if (!req.session.userID) {
     res.status(401).json({ message: "로그인 후 이용 가능합니다." });
     return;
   }
 
+  let images = [];
+
+  if (req.files) {
+    images = req.files.map((file) => file.path);
+  }
   let newPost = {
     title: req.body.title,
     content: req.body.content,
-    image_path: req.body.image_path,
+    image_path: JSON.stringify(images),
     created_At: new Date(),
   };
 
@@ -346,10 +365,10 @@ router.post("/Ror", (req, res) => {
 
 //무료추천종목수익률 목록
 router.get("/Ror", (req, res) => {
-  //  if (!req.session.userID) {
-  //     res.status(401).json({ message: '로그인 후 이용 가능합니다.' });
-  //     return;
-  //  }
+  // if (!req.session.userID) {
+  //   res.status(401).json({ message: "로그인 후 이용 가능합니다." });
+  //   return;
+  // }
 
   let sql = "SELECT * FROM Rorboard";
 
@@ -363,10 +382,10 @@ router.get("/Ror", (req, res) => {
 
 //무료추천종목수익률 내용
 router.get("/Ror/:id", (req, res) => {
-  //  if (!req.session.userID) {
-  //     res.status(401).json({ message: '로그인 후 이용 가능합니다.' });
-  //     return;
-  //  }
+  // if (!req.session.userID) {
+  //   res.status(401).json({ message: "로그인 후 이용 가능합니다." });
+  //   return;
+  // }
 
   let sql = "SELECT * FROM Rorboard WHERE id = ?";
 
@@ -374,7 +393,14 @@ router.get("/Ror/:id", (req, res) => {
     if (err) {
       throw err;
     }
-    res.status(200).json(result);
+    if (result.length > 0) {
+      let post = result[0];
+      post.image_path = JSON.parse(post.image_path);
+
+      res.status(200).json(post);
+    } else {
+      res.status(404).json({ message: "해당 ID의 게시글이 없습니다." });
+    }
   });
 });
 
