@@ -22,7 +22,8 @@ function RorTable({ Rors }) {
   const getCurrentPageItems = () => {
     const startIndex = (currentPage - 1) * itemsPerPage;
     const endIndex = startIndex + itemsPerPage;
-    return Rors.slice(startIndex, endIndex);
+    const sortedRoRDatas = Rors.sort((a, b) => b.id - a.id);
+    return sortedRoRDatas.slice(startIndex, endIndex);
   };
 
   const currentItems = getCurrentPageItems(); // 현재 페이지에 해당하는 항목들

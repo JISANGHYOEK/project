@@ -33,7 +33,8 @@ function FAQTable({ faqs }) {
   const getCurrentPageItems = () => {
     const startIndex = (currentPage - 1) * itemsPerPage;
     const endIndex = startIndex + itemsPerPage;
-    return faqs.slice(startIndex, endIndex);
+    const sortedFaqs = [...faqs].sort((a, b) => b.id - a.id);
+    return sortedFaqs.slice(startIndex, endIndex);
   };
 
   const currentItems = getCurrentPageItems();

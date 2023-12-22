@@ -2,13 +2,6 @@
   width: 60%;
   margin: 0 auto;
 }
-
-.Ror-view-go-list-btn {
-  border: 0;
-  padding: 10px;
-  background-color: #ffd9d9;
-}
-
 .Ror-view-row {
   margin: 10px 0;
   display: flex;
